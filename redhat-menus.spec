@@ -56,7 +56,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
-* Wes Sep 22 2004 Warren Togami <wtogami@redhat.com> 1.6.1-2
+* Wed Sep 22 2004 Warren Togami <wtogami@redhat.com> 1.6.1-2
 - remove ugly hacks so package is easier to maintain
 
 * Tue Sep 21 2004 Seth Nickell <snickell@redhat.com> 1.6.1-1
