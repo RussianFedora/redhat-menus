@@ -2,7 +2,7 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 0.26
+Version: 0.38
 Release: 1
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
@@ -58,6 +58,36 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications
 
 %changelog
+* Thu Feb  6 2003 Havoc Pennington <hp@redhat.com> 0.37-1
+- 0.37
+
+* Wed Jan 29 2003 Havoc Pennington <hp@redhat.com>
+- 0.36 fixes missing Preferences in start-here hopefully
+
+* Mon Jan 27 2003 Havoc Pennington <hp@redhat.com>
+- 0.35
+
+* Wed Jan 22 2003 Tim Powers <timp@redhat.com>
+- rebuilt
+
+* Wed Jan 22 2003 Than Ngo <than@redhat.com>
+- 0.34, enable start-here.menu
+
+* Sat Jan 11 2003 Havoc Pennington <hp@redhat.com>
+- 0.33
+
+* Thu Jan  9 2003 Havoc Pennington <hp@redhat.com>
+- 0.32
+
+* Tue Jan  7 2003 Havoc Pennington <hp@redhat.com>
+- 0.31
+
+* Thu Dec 12 2002 Havoc Pennington <hp@redhat.com>
+- 0.29, rebuild
+
+* Wed Dec  4 2002 Than Ngo <than@redhat.com>
+- 0.27, added some new catagories for KDE 3.1
+
 * Tue Sep 03 2002 Phil Knirsch <pknirsch@redhat.com>
 - 0.26 fixed start-here.menu missing </Folder> tag for Preferences
 
