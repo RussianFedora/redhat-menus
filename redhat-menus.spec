@@ -3,7 +3,7 @@
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
 Version: 1.9
-Release: 1
+Release: 2
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 
@@ -49,6 +49,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files  -f %{gettext_package}.lang
 %defattr(-,root,root)
+%dir %{_sysconfdir}/xdg
 %dir %{_sysconfdir}/xdg/menus
 %config %{_sysconfdir}/xdg/menus/*.menu
 %{_sysconfdir}/X11/starthere
@@ -56,6 +57,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Wed Oct 13 2004 Bill Nottingham <notting@redhat.com> 1.9-2
+- own /etc/xdg (#130596)
+
 * Wed Sep 29 2004 Ray Strode <rstrode@redhat.com> 1.9-1
 - release 1.9, add gthumb desktop file  
 
