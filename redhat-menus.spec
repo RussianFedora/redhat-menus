@@ -2,7 +2,7 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 1.12
+Version: 1.13
 Release: 1
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
@@ -57,6 +57,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Fri Oct 22 2004  <jrb@redhat.com> - 1.13-1
+- New release.  This just has new translations and an evolution desktop file
+
 * Mon Oct 18 2004  <jrb@redhat.com> - 1.12-1
 - new version to deal with default mail client
 
