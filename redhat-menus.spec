@@ -2,7 +2,7 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 0.20
+Version: 0.21
 Release: 1
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
@@ -51,6 +51,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications
 
 %changelog
+* Wed Aug 21 2002 Havoc Pennington <hp@redhat.com>
+- 0.21 with new translations
+
 * Fri Aug 16 2002 Havoc Pennington <hp@redhat.com>
 - 0.20 with new icons, etc.
 
