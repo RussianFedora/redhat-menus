@@ -2,8 +2,8 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 1.13
-Release: 1
+Version: 3.7
+Release: 2
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 
@@ -57,6 +57,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Mon Nov  1 2004 <dcbw@redhat.com> - 3.7-2
+- Gratuitous version bump from upstream
+- #rh74651# no mimetype entries for microsoft offic
+- #rh136731# wordperfect files (.wpd) should be associated with openoffice
+
 * Fri Oct 22 2004  <jrb@redhat.com> - 1.13-1
 - New release.  This just has new translations and an evolution desktop file
 
