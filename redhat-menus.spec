@@ -2,7 +2,7 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 0.23
+Version: 0.25
 Release: 1
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
@@ -58,6 +58,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications
 
 %changelog
+* Fri Aug 30 2002 Havoc Pennington <hp@redhat.com>
+- 0.25 with htmlview, fixed start-here.menu
+
 * Tue Aug 27 2002 Havoc Pennington <hp@redhat.com>
 - 0.23 with new translations, KDE MIME fixes, openoffice Exec= fixes
 - don't munge en_US text, broke docs. Back to just "Web Browser"
