@@ -4,7 +4,7 @@
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
 Version: 3.7.1
-Release: 3
+Release: 4
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 PreReq: desktop-file-utils >= %{desktop_file_utils_version}
@@ -14,6 +14,8 @@ Group: User Interface/Desktops
 BuildRoot: %{_tmppath}/%{name}-root
 BuildArchitectures: noarch
 BuildRequires: desktop-file-utils >= %{desktop_file_utils_version}
+
+Patch0: redhat-menus-3.7.1-settings.patch
 
 ## old nautilus contained start-here stuff
 Conflicts: nautilus <= 2.0.3-1
@@ -28,9 +30,11 @@ of "subdirectories" in the menus.
 
 %prep
 %setup -q
+%patch0 -p1 -b .settings
 
 %build
 
+automake
 %configure
 make
 
@@ -66,6 +70,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Thu Feb  3 2005  <mclasen@redhat.com> - 3.7.1-4
+- Add settings.menu
+
 * Mon Nov 22 2004  <jrb@redhat.com> - 3.7.1-3
 - Sync to upstream
 - #rh138282# Get redhat-evolution.desktop.in
