@@ -2,7 +2,7 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 0.21
+Version: 0.22
 Release: 1
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
@@ -31,6 +31,11 @@ of "subdirectories" in the menus.
 %configure
 make
 
+perl -pi -e 's/Web Browser/Mozilla Web Browser/g' desktop-files/redhat-web.desktop
+perl -pi -e 's/Email/Evolution Email/g' desktop-files/redhat-email.desktop
+perl -pi -e 's/Diagrams/Dia Diagrams/g' desktop-files/redhat-diagrams.desktop
+perl -pi -e 's/Video Conferencing/GnomeMeeting Video Conferencing/g' desktop-files/redhat-gnomemeeting.desktop
+
 %install
 rm -rf $RPM_BUILD_ROOT
 
@@ -51,6 +56,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications
 
 %changelog
+* Fri Aug 23 2002 Havoc Pennington <hp@redhat.com>
+- 0.22 new translations
+- munge en_US text to "Mozilla Web Browser" etc.
+
 * Wed Aug 21 2002 Havoc Pennington <hp@redhat.com>
 - 0.21 with new translations
 
