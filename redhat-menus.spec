@@ -38,42 +38,10 @@ make
 #perl -pi -e 's/Diagrams/Dia Diagrams/g' desktop-files/redhat-diagrams.desktop
 #perl -pi -e 's/Video Conferencing/GnomeMeeting Video Conferencing/g' desktop-files/redhat-gnomemeeting.desktop
 
-
-# Hack for FC2 release for Preferred Browser and Mail launching
-# "Web Browser" launches the preferred browser set in gconf http url handler
-# "Mail Client" launches the preferred mail client set in gconf mailto url handler
-# XXX: After FC2, fix this the right way
-
-install -m 644 desktop-files/redhat-web.desktop desktop-files/mozilla.desktop
-install -m 644 desktop-files/redhat-web.desktop desktop-files/epiphany.desktop
-sed -i 's/redhat-web-browser.png/mozilla-icon.png/' desktop-files/mozilla.desktop
-sed -i 's/redhat-web-browser.png/web-browser.png/' desktop-files/epiphany.desktop
-sed -i 's/ Mozilla //' desktop-files/redhat-web.desktop
-sed -i 's/ Mozilla//' desktop-files/redhat-web.desktop
-sed -i 's/Mozilla //' desktop-files/redhat-web.desktop
-sed -i 's/Mozilla//' desktop-files/redhat-web.desktop
-sed -i 's/mozilla/htmlview/' desktop-files/redhat-web.desktop
-sed -i 's/Mozilla/Epiphany/' desktop-files/epiphany.desktop
-sed -i 's/mozilla/epiphany/' desktop-files/epiphany.desktop
-
-install -m 644 desktop-files/redhat-email.desktop desktop-files/evolution.desktop
-sed -i 's/redhat-email.png/evolution.png/' desktop-files/evolution.desktop
-sed -i 's/ Evolution //' desktop-files/redhat-email.desktop
-sed -i 's/ Evolution//' desktop-files/redhat-email.desktop
-sed -i 's/Evolution //' desktop-files/redhat-email.desktop
-sed -i 's/Evolution//' desktop-files/redhat-email.desktop
-sed -i 's/evolution/launchmail/' desktop-files/redhat-email.desktop
-
-
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %makeinstall
-# XXX: Fix this after FC2
-install -m 644 desktop-files/mozilla.desktop $RPM_BUILD_ROOT%{_datadir}/desktop-menu-patches/mozilla.desktop
-install -m 644 desktop-files/epiphany.desktop $RPM_BUILD_ROOT%{_datadir}/desktop-menu-patches/epiphany.desktop
-install -m 644 desktop-files/evolution.desktop $RPM_BUILD_ROOT%{_datadir}/desktop-menu-patches/evolution.desktop
-
 %find_lang %{gettext_package}
 
 %clean
@@ -88,6 +56,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Wes Sep 22 2004 Warren Togami <wtogami@redhat.com> 1.6.1-2
+- remove ugly hacks so package is easier to maintain
+
 * Tue Sep 21 2004 Seth Nickell <snickell@redhat.com> 1.6.1-1
 - release 1.6.1, don't call AC_PROG_LIBTOOL
 
