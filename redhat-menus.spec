@@ -2,11 +2,10 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 0.18
-Release: 2
+Version: 0.20
+Release: 1
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
-Patch0: redhat-menus-0.18-nognomecc.patch
 
 License: XFree86
 Group: User Interface/Desktops
@@ -15,6 +14,8 @@ BuildArchitectures: noarch
 
 ## old nautilus contained start-here stuff
 Conflicts: nautilus <= 2.0.3-1
+## desktop files in redhat-menus point to icons in new artwork
+Conflicts: redhat-artwork < 0.35
 
 %description
 
@@ -24,7 +25,6 @@ of "subdirectories" in the menus.
 
 %prep
 %setup -q
-%patch0 -p1 -b ".nognomecc"
 
 %build
 
@@ -51,6 +51,13 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications
 
 %changelog
+* Fri Aug 16 2002 Havoc Pennington <hp@redhat.com>
+- 0.20 with new icons, etc.
+
+* Fri Aug 16 2002 Havoc Pennington <hp@redhat.com>
+- new icons, translations
+- drop control-center patch, use from cvs
+
 * Thu Aug 15 2002 Jonathan Blandford <jrb@redhat.com>
 - move the control-center
 
