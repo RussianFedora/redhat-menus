@@ -2,7 +2,7 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 1.6
+Version: 1.6.1
 Release: 1
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
@@ -88,6 +88,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Tue Sep 21 2004 Seth Nickell <snickell@redhat.com> 1.6.1-1
+- release 1.6.1, don't call AC_PROG_LIBTOOL
+
 * Tue Sep 21 2004 Seth Nickell <snickell@redhat.com> 1.6-1
 - release 1.6, add a bunch of translations to the build
 
