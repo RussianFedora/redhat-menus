@@ -4,7 +4,7 @@
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
 Version: 3.7.1
-Release: 6
+Release: 7
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 PreReq: desktop-file-utils >= %{desktop_file_utils_version}
@@ -16,6 +16,7 @@ BuildArchitectures: noarch
 BuildRequires: desktop-file-utils >= %{desktop_file_utils_version}
 
 Patch0: redhat-menus-3.7.1-settings.patch
+Patch1: redhat-menus-3.7.1-settings-tn.patch
 
 ## old nautilus contained start-here stuff
 Conflicts: nautilus <= 2.0.3-1
@@ -30,7 +31,7 @@ of "subdirectories" in the menus.
 
 %prep
 %setup -q
-%patch0 -p1 -b .settings
+%patch1 -p1 -b .settings
 
 %build
 
@@ -69,6 +70,12 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Mon Mar 21 2005 Than Ngo <than@redhat.com> 3.7.1-7
+- add mssing kwrite/kate/kedit, kcontrol center, System setting
+  in menu #147121, #12218, #1221811, #143937
+- get rid of capplets from preferences.menu, #149233
+- fix icon entry in desktop file #143336
+
 * Fri Feb  8 2005  <mclasen@redhat.com> - 3.7.1-6
 - Don't pick up duplicates in the Others menu
 
