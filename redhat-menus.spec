@@ -34,8 +34,6 @@ of "subdirectories" in the menus.
 
 %build
 
-aclocal
-automake
 %configure
 make
 
