@@ -1,17 +1,19 @@
 %define gettext_package redhat-menus
+%define desktop_file_utils_version 0.9
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 3.7
-Release: 6
+Version: 3.7.1
+Release: 3
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
-Patch0: redhat-menus-3.7-ooo-mime-types.patch
+PreReq: desktop-file-utils >= %{desktop_file_utils_version}
 
 License: XFree86
 Group: User Interface/Desktops
 BuildRoot: %{_tmppath}/%{name}-root
 BuildArchitectures: noarch
+BuildRequires: desktop-file-utils >= %{desktop_file_utils_version}
 
 ## old nautilus contained start-here stuff
 Conflicts: nautilus <= 2.0.3-1
@@ -26,7 +28,6 @@ of "subdirectories" in the menus.
 
 %prep
 %setup -q
-%patch0 -p1 -b .ooo-mime-types
 
 %build
 
@@ -49,6 +50,12 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+update-desktop-database %{_datadir}/applications
+
+%postun
+update-desktop-database %{_datadir}/applications
+
 %files  -f %{gettext_package}.lang
 %defattr(-,root,root)
 %dir %{_sysconfdir}/xdg
@@ -59,7 +66,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
-* Mon Nov 22 2004 Dan Williams <dcbw@redhat.com> 3.7-6
+* Mon Nov 22 2004  <jrb@redhat.com> - 3.7.1-3
+- Sync to upstream
+- #rh138282# Get redhat-evolution.desktop.in
+
+* Mon Nov 22 2004 Dan Williams <dcbw@redhat.com> 3.7-5
 - #rh137520# Add "application/x-ole-storage" to Calc, Impress, and Writer
 	desktop files, so Evolution can associate these with OOo
 
