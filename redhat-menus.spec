@@ -4,7 +4,7 @@
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
 Version: 3.7.1
-Release: 8
+Release: 9
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 PreReq: desktop-file-utils >= %{desktop_file_utils_version}
@@ -32,7 +32,7 @@ of "subdirectories" in the menus.
 %prep
 %setup -q
 %patch0 -p1 -b .settings
-%patch1 -p1 -b .misc
+#%patch1 -p1 -b .misc
 
 %build
 
@@ -71,6 +71,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Thu Mar 31 2005 Matthias Clasen <mclasen@redhat.com> 3.7.1-9
+- don't pick up a pointless Desktop/System directory
+
 * Thu Mar 31 2005 Than Ngo <than@redhat.com> 3.7.1-8
 - don't mess gnome menu up
 
