@@ -1,12 +1,20 @@
+%define gettext_package redhat-menus
+
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 0.2
+Version: 0.18
 Release: 2
 URL: http://www.redhat.com
-Source0: %{name}.tar.gz
+Source0: %{name}-%{version}.tar.gz
+Patch0: redhat-menus-0.18-nognomecc.patch
+
 License: XFree86
-Group: Undecided
+Group: User Interface/Desktops
 BuildRoot: %{_tmppath}/%{name}-root
+BuildArchitectures: noarch
+
+## old nautilus contained start-here stuff
+Conflicts: nautilus <= 2.0.3-1
 
 %description
 
@@ -15,42 +23,91 @@ GNOME and KDE, and the .desktop files that define the names and icons
 of "subdirectories" in the menus.
 
 %prep
-%setup -q -n redhat-menus
+%setup -q
+%patch0 -p1 -b ".nognomecc"
 
 %build
+
+%configure
+make
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/desktop-menu-files
-chmod 755 $RPM_BUILD_ROOT%{_datadir}/desktop-menu-files
-for I in desktop-files/*; do 
-  install -m 644 $I $RPM_BUILD_ROOT%{_datadir}/desktop-menu-files
-done
+%makeinstall
 
-# workaround until intltool is set up properly
-(cd $RPM_BUILD_ROOT%{_datadir}/desktop-menu-files; for I in *.directory.in; do mv $I `basename $I .directory.in`.directory; done)
-
-mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/X11/desktop-menus
-chmod 755 $RPM_BUILD_ROOT%{_sysconfdir}/X11/desktop-menus
-for I in menus/*; do
-  install -m 644 $I $RPM_BUILD_ROOT%{_sysconfdir}/X11/desktop-menus
-done
-
-
+%find_lang %{gettext_package}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files  -f %{gettext_package}.lang
 %defattr(-,root,root)
 %dir %{_sysconfdir}/X11/desktop-menus
 %config %{_sysconfdir}/X11/desktop-menus/*
+%{_sysconfdir}/X11/starthere
 %{_datadir}/desktop-menu-files
+%{_datadir}/desktop-menu-patches
+%{_datadir}/applications
 
 %changelog
-* Tue Jun 11 2002 Havoc Pennington <hp@redhat.com>
-- rebuild in different environment
+* Thu Aug 15 2002 Jonathan Blandford <jrb@redhat.com>
+- move the control-center
+
+* Wed Aug 14 2002 Havoc Pennington <hp@redhat.com>
+- 0.18 with changed icons etc.
+
+* Fri Aug  9 2002 Havoc Pennington <hp@redhat.com>
+- 0.17 with System Settings submenu and translations
+
+* Wed Aug  7 2002 Havoc Pennington <hp@redhat.com>
+- 0.16 with start here
+
+* Wed Aug  7 2002 Havoc Pennington <hp@redhat.com>
+- 0.15 with placeholder icons for panel desktop files
+
+* Tue Aug  6 2002 Havoc Pennington <hp@redhat.com>
+- 0.14 with KDE preferences submenus
+
+* Fri Aug  2 2002 Havoc Pennington <hp@redhat.com>
+- 0.12 with server-settings and system-settings
+
+* Wed Jul 31 2002 Havoc Pennington <hp@redhat.com>
+- make it noarch
+
+* Wed Jul 31 2002 Havoc Pennington <hp@redhat.com>
+- 0.11 with audio player desktop file
+
+* Wed Jul 31 2002 Havoc Pennington <hp@redhat.com>
+- 0.10 trying Extras instead of All Apps, and add Advanced to preferences
+
+* Tue Jul 30 2002 Havoc Pennington <hp@redhat.com>
+- 0.9, has gdmsetup replacement desktop file
+
+* Mon Jul 29 2002 Havoc Pennington <hp@redhat.com>
+- 0.8
+
+* Wed Jul 24 2002 Havoc Pennington <hp@redhat.com>
+- 0.7, adds documentation submenu, strips Base-Only out of All Apps
+
+* Wed Jul 24 2002 Havoc Pennington <hp@redhat.com>
+- 0.6
+
+* Tue Jul 23 2002 Havoc Pennington <hp@redhat.com>
+- 0.5
+
+* Sat Jul 20 2002 Than Ngo <than@redhat.com>
+- add BaseGroup settings into Settings.directory
+
+* Thu Jul 11 2002 Havoc Pennington <hp@redhat.com>
+- fix group
+
+* Mon Jun 24 2002 Havoc Pennington <hp@redhat.com>
+- 0.3
+- 0.4
+
+* Fri Jun 21 2002 Tim Powers <timp@redhat.com>
+- automated rebuild
 
 * Tue Jun 11 2002 Havoc Pennington <hp@redhat.com>
 - move menus to sysconfdir/X11
