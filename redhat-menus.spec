@@ -4,7 +4,7 @@
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
 Version: 3.7.1
-Release: 5
+Release: 6
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 PreReq: desktop-file-utils >= %{desktop_file_utils_version}
@@ -69,6 +69,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Fri Feb  8 2005  <mclasen@redhat.com> - 3.7.1-6
+- Don't pick up duplicates in the Others menu
+
 * Thu Feb  3 2005  <mclasen@redhat.com> - 3.7.1-5
 - Add settings.menu
 
