@@ -2,7 +2,7 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 0.40
+Version: 1.3
 Release: 1
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
@@ -50,14 +50,28 @@ rm -rf $RPM_BUILD_ROOT
 
 %files  -f %{gettext_package}.lang
 %defattr(-,root,root)
-%dir %{_sysconfdir}/X11/desktop-menus
-%config %{_sysconfdir}/X11/desktop-menus/*
+%dir %{_sysconfdir}/xdg/menus
+%config %{_sysconfdir}/xdg/menus/*.menu
 %{_sysconfdir}/X11/starthere
-%{_datadir}/desktop-menu-files
-%{_datadir}/desktop-menu-patches
-%{_datadir}/applications
+%{_datadir}/desktop-menu-patches/*.desktop
+%{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Tue Mar 16 2004 Than Ngo <than@redhat.com> 1.3-1
+- Release 1.3, add applications-kmenuedit.menu that makes kmenuedit working
+
+* Tue Mar 16 2004 Than Ngo <than@redhat.com> 1.2-1
+- Release 1.2, fixed KDE menu issue
+
+* Fri Mar 12 2004 Than Ngo <than@redhat.com> 1.1-1
+- Release 1.1, cleanup KDE menus, get rid of KDE stuffs which are now included in kde package
+
+* Thu Mar 11 2004 Seth Nickell <snickell@redhat.com>
+- Release 1.0 which conforms to xdg menu spec 0.8
+
+* Fri Feb 13 2004 Elliot Lee <sopwith@redhat.com>
+- rebuilt
+
 * Fri Oct  3 2003 Havoc Pennington <hp@redhat.com> 0.40-1
 - 0.40
 
