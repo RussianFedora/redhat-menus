@@ -2,8 +2,8 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 1.6.1
-Release: 2
+Version: 1.7
+Release: 1
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 
@@ -56,6 +56,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Fri Sep 24 2004 Ray Strode <rstrode@redhat.com> 1.7-1
+- release 1.7, remove gnome-control-center.desktop
+
 * Wed Sep 22 2004 Warren Togami <wtogami@redhat.com> 1.6.1-2
 - remove ugly hacks so package is easier to maintain
 
