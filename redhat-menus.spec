@@ -2,8 +2,8 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 1.9
-Release: 2
+Version: 1.10
+Release: 1
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 
@@ -57,6 +57,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Wed Oct 13 2004 Colin Walters <walters@redhat.com> 1.10-1
+- Add application/ogg to redhat-audio-player.desktop,
+  for bug 134547 (hi Sopwith)
+  
 * Wed Oct 13 2004 Bill Nottingham <notting@redhat.com> 1.9-2
 - own /etc/xdg (#130596)
 
