@@ -2,7 +2,7 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 0.25
+Version: 0.26
 Release: 1
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
@@ -58,6 +58,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications
 
 %changelog
+* Tue Sep 03 2002 Phil Knirsch <pknirsch@redhat.com>
+- 0.26 fixed start-here.menu missing </Folder> tag for Preferences
+
 * Fri Aug 30 2002 Havoc Pennington <hp@redhat.com>
 - 0.25 with htmlview, fixed start-here.menu
 
