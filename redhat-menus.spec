@@ -4,14 +4,14 @@
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
 Version: 3.7.1
-Release: 7
+Release: 8
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 PreReq: desktop-file-utils >= %{desktop_file_utils_version}
 
 License: XFree86
 Group: User Interface/Desktops
-BuildRoot: %{_tmppath}/%{name}-root
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildArchitectures: noarch
 BuildRequires: desktop-file-utils >= %{desktop_file_utils_version}
 
@@ -31,7 +31,8 @@ of "subdirectories" in the menus.
 
 %prep
 %setup -q
-%patch1 -p1 -b .settings
+%patch0 -p1 -b .settings
+%patch1 -p1 -b .misc
 
 %build
 
@@ -70,6 +71,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Thu Mar 31 2005 Than Ngo <than@redhat.com> 3.7.1-8
+- don't mess gnome menu up
+
 * Mon Mar 21 2005 Than Ngo <than@redhat.com> 3.7.1-7
 - add mssing kwrite/kate/kedit, kcontrol center, System setting
   in menu #147121, #12218, #1221811, #143937
