@@ -3,9 +3,10 @@
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
 Version: 3.7
-Release: 2
+Release: 6
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
+Patch0: redhat-menus-3.7-ooo-mime-types.patch
 
 License: XFree86
 Group: User Interface/Desktops
@@ -25,6 +26,7 @@ of "subdirectories" in the menus.
 
 %prep
 %setup -q
+%patch0 -p1 -b .ooo-mime-types
 
 %build
 
@@ -57,6 +59,13 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Mon Nov 22 2004 Dan Williams <dcbw@redhat.com> 3.7-6
+- #rh137520# Add "application/x-ole-storage" to Calc, Impress, and Writer
+	desktop files, so Evolution can associate these with OOo
+
+* Tue Nov 16 2004 Dan Williams <dcbw@redhat.com> 3.7-4
+- #rh137520# Add more supported mime-types to OpenOffice.org .desktop files
+
 * Mon Nov  1 2004 <dcbw@redhat.com> - 3.7-2
 - Gratuitous version bump from upstream
 - #rh74651# no mimetype entries for microsoft offic
