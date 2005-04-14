@@ -3,8 +3,8 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 3.7.1
-Release: 9
+Version: 3.8.0
+Release: 1
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 PreReq: desktop-file-utils >= %{desktop_file_utils_version}
@@ -71,6 +71,11 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Thu Apr 14 2005 Ray Strode <rstrode@redhat.com> 3.8.0-1
+- don't include kde legacy stuff anymore, since
+  kde uses it's own applications menu file now and it 
+  breaks gnome (bug 153125)
+
 * Thu Mar 31 2005 Matthias Clasen <mclasen@redhat.com> 3.7.1-9
 - don't pick up a pointless Desktop/System directory
 
