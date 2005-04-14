@@ -3,7 +3,7 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 3.8.0
+Version: 3.8
 Release: 1
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
