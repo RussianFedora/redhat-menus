@@ -12,8 +12,10 @@ PreReq: desktop-file-utils >= %{desktop_file_utils_version}
 License: XFree86
 Group: User Interface/Desktops
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
-BuildArchitectures: noarch
+BuildArch: noarch
 BuildRequires: desktop-file-utils >= %{desktop_file_utils_version}
+
+Patch0: redhat-menus-5.0.0-move-prefs-out-of-apps-menu.patch
 
 ## old nautilus contained start-here stuff
 Conflicts: nautilus <= 2.0.3-1
@@ -28,6 +30,7 @@ of "subdirectories" in the menus.
 
 %prep
 %setup -q
+%patch0 -p1 -b .move-prefs-out-of-apps-menu
 
 %build
 
@@ -62,6 +65,10 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Mon Sep 26 2005 Ray Strode <rstrode@redhat.com> 5.0.0-2
+- one commented out patch was actually important and 
+  shouldn't have been removed.
+
 * Mon Sep 26 2005 Ray Strode <rstrode@redhat.com> 5.0.0-1
 - add a preferences-merged dir for per package
   preference menus overriding
