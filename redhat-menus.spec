@@ -3,7 +3,7 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 3.8
+Version: 5.0.0
 Release: 1
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
@@ -14,9 +14,6 @@ Group: User Interface/Desktops
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildArchitectures: noarch
 BuildRequires: desktop-file-utils >= %{desktop_file_utils_version}
-
-Patch0: redhat-menus-3.7.1-settings.patch
-Patch1: redhat-menus-3.7.1-settings-tn.patch
 
 ## old nautilus contained start-here stuff
 Conflicts: nautilus <= 2.0.3-1
@@ -31,25 +28,17 @@ of "subdirectories" in the menus.
 
 %prep
 %setup -q
-%patch0 -p1 -b .settings
-#%patch1 -p1 -b .misc
 
 %build
 
 %configure
 make
 
-# the "perl only English" trick was OK for translations, but 
-# still broke docs - so can't do this
-#perl -pi -e 's/Web Browser/Mozilla Web Browser/g' desktop-files/redhat-web.desktop
-#perl -pi -e 's/Email/Evolution Email/g' desktop-files/redhat-email.desktop
-#perl -pi -e 's/Diagrams/Dia Diagrams/g' desktop-files/redhat-diagrams.desktop
-#perl -pi -e 's/Video Conferencing/GnomeMeeting Video Conferencing/g' desktop-files/redhat-gnomemeeting.desktop
-
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%makeinstall
+make install DESTDIR=$RPM_BUILD_ROOT
+
 %find_lang %{gettext_package}
 
 %clean
@@ -65,12 +54,19 @@ update-desktop-database %{_datadir}/applications
 %defattr(-,root,root)
 %dir %{_sysconfdir}/xdg
 %dir %{_sysconfdir}/xdg/menus
+%dir %{_sysconfdir}/xdg/menus/applications-merged
+%dir %{_sysconfdir}/xdg/menus/preferences-merged
 %config %{_sysconfdir}/xdg/menus/*.menu
 %{_sysconfdir}/X11/starthere
 %{_datadir}/desktop-menu-patches/*.desktop
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Mon Sep 26 2005 Ray Strode <rstrode@redhat.com> 5.0.0-1
+- add a preferences-merged dir for per package
+  preference menus overriding
+- remove old patches
+
 * Thu Apr 14 2005 Ray Strode <rstrode@redhat.com> 3.8.0-1
 - don't include kde legacy stuff anymore, since
   kde uses it's own applications menu file now and it 
