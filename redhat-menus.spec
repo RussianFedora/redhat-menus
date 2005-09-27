@@ -3,8 +3,8 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 5.0.0
-Release: 2
+Version: 5.0.1
+Release: 1
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 PreReq: desktop-file-utils >= %{desktop_file_utils_version}
@@ -14,8 +14,6 @@ Group: User Interface/Desktops
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildArch: noarch
 BuildRequires: desktop-file-utils >= %{desktop_file_utils_version}
-
-Patch0: redhat-menus-5.0.0-move-prefs-out-of-apps-menu.patch
 
 ## old nautilus contained start-here stuff
 Conflicts: nautilus <= 2.0.3-1
@@ -30,7 +28,6 @@ of "subdirectories" in the menus.
 
 %prep
 %setup -q
-%patch0 -p1 -b .move-prefs-out-of-apps-menu
 
 %build
 
@@ -59,12 +56,17 @@ update-desktop-database %{_datadir}/applications
 %dir %{_sysconfdir}/xdg/menus
 %dir %{_sysconfdir}/xdg/menus/applications-merged
 %dir %{_sysconfdir}/xdg/menus/preferences-merged
+%dir %{_sysconfdir}/xdg/menus/preferences-post-merged
 %config %{_sysconfdir}/xdg/menus/*.menu
 %{_sysconfdir}/X11/starthere
 %{_datadir}/desktop-menu-patches/*.desktop
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Tue Sep 27 2005 Ray Strode <rstrode@redhat.com> 5.0.1-1
+- don't use dir name preferences-merged.  It has special
+  significance (bug 169108)
+
 * Mon Sep 26 2005 Ray Strode <rstrode@redhat.com> 5.0.0-2
 - one commented out patch was actually important and 
   shouldn't have been removed.
