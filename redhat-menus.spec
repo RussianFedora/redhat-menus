@@ -3,7 +3,7 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 5.0.1
+Version: 5.0.2
 Release: 1
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
@@ -63,6 +63,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Fri Oct 21 2005 Matthias Clasen <mclasen@redhat.com> 5.0.2-1
+- Hide gfloppy by default
+
 * Tue Sep 27 2005 Ray Strode <rstrode@redhat.com> 5.0.1-1
 - don't use dir name preferences-merged.  It has special
   significance (bug 169108)
