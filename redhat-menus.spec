@@ -3,7 +3,7 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 5.0.2
+Version: 5.0.4
 Release: 1
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
@@ -19,6 +19,8 @@ BuildRequires: desktop-file-utils >= %{desktop_file_utils_version}
 Conflicts: nautilus <= 2.0.3-1
 ## desktop files in redhat-menus point to icons in new artwork
 Conflicts: redhat-artwork < 0.35
+## old evolution packages point to a no-longer-existing symlink
+Conflicts: evolution <= 2.4.1-5
 
 %description
 
@@ -63,6 +65,11 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Tue Oct 25 2005 David Malcolm <dmalcolm@redhat.com> - 5.0.4-1
+- Split the evolution desktop file into four separate ones: one per component.
+  Force people to update evolution, to avoid it using a stale symlink. 
+  (#170799).
+
 * Fri Oct 21 2005 Matthias Clasen <mclasen@redhat.com> 5.0.2-1
 - Hide gfloppy by default
 
