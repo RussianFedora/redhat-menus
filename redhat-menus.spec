@@ -3,7 +3,7 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 5.0.4
+Version: 5.0.5
 Release: 1
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
@@ -65,6 +65,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Fri Oct 28 2005 Matthias Clasen <mclasen@redhat.com> 5.0.5-1
+- Hide usermount by default
+
 * Tue Oct 25 2005 David Malcolm <dmalcolm@redhat.com> - 5.0.4-1
 - Split the evolution desktop file into four separate ones: one per component.
   Force people to update evolution, to avoid it using a stale symlink. 
