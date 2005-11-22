@@ -3,7 +3,7 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 5.0.6
+Version: 5.0.7
 Release: 1
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
@@ -65,6 +65,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Tue Nov 22 2005 Matthias Clasen <mclasen@redhat.com> 5.0.7-1
+- Clean up menus
+
 * Wed Nov 16 2005 Matthias Clasen <mclasen@redhat.com> 5.0.6-1
 - Hide userinfo, userpassword and gdmphotosetup by default
 
