@@ -4,7 +4,7 @@
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
 Version: 5.0.7
-Release: 2
+Release: 3
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 Patch0: redhat-menus-no-package-install.patch
@@ -31,7 +31,7 @@ of "subdirectories" in the menus.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch0 -p1 -b .no-package-install
 
 %build
 
@@ -67,6 +67,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Wed Dec  7 2005 Matthias Clasen <mclasen@redhat.com> - 5.0.7-3
+- hide the separator as well
+
 * Fri Dec  2 2005 Jeremy Katz <katzj@redhat.com> - 5.0.7-2
 - hide system-config-packages from the applications menu until it works again
 
