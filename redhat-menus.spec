@@ -4,7 +4,7 @@
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
 Version: 5.0.7
-Release: 3
+Release: 3.1
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 Patch0: redhat-menus-no-package-install.patch
@@ -67,6 +67,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Fri Dec 09 2005 Jesse Keating <jkeating@redhat.com>
+- rebuilt
+
 * Wed Dec  7 2005 Matthias Clasen <mclasen@redhat.com> - 5.0.7-3
 - hide the separator as well
 
