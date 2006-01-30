@@ -3,11 +3,10 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 5.0.8
+Version: 5.5.5
 Release: 1
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
-Patch0: redhat-menus-no-package-install.patch
 PreReq: desktop-file-utils >= %{desktop_file_utils_version}
 
 License: XFree86
@@ -31,7 +30,6 @@ of "subdirectories" in the menus.
 
 %prep
 %setup -q
-%patch0 -p1 -b .no-package-install
 
 %build
 
@@ -62,11 +60,14 @@ update-desktop-database %{_datadir}/applications
 %dir %{_sysconfdir}/xdg/menus/preferences-merged
 %dir %{_sysconfdir}/xdg/menus/preferences-post-merged
 %config %{_sysconfdir}/xdg/menus/*.menu
-%{_sysconfdir}/X11/starthere
 %{_datadir}/desktop-menu-patches/*.desktop
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Mon Jan 30 2006 Ray Strode <rstrode@redhat.com> - 5.5.5-1
+- Update to 5.5.5
+- put pirut in toplevel applications menu
+
 * Tue Jan  3 2006 Matthias Clasen <mclasen@redhat.com> - 5.0.8-1
 - Make "Other" disappear again
 
