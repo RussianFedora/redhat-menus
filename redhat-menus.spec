@@ -4,7 +4,7 @@
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
 Version: 5.5.5
-Release: 1
+Release: 2
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 PreReq: desktop-file-utils >= %{desktop_file_utils_version}
@@ -22,6 +22,8 @@ Conflicts: redhat-artwork < 0.35
 ## old evolution packages point to a no-longer-existing symlink
 Conflicts: evolution <= 2.4.1-5
 
+Patch0: redhat-menus-5.5.5-fix-pirut.patch
+
 %description
 
 This package contains the XML files that describe the menu layout for 
@@ -30,6 +32,7 @@ of "subdirectories" in the menus.
 
 %prep
 %setup -q
+%patch0 -p1 -b .fix-pirut
 
 %build
 
@@ -64,6 +67,10 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Mon Jan 30 2006 Ray Strode <rstrode@redhat.com> - 5.5.5-2
+- a few more tweaks needed to get pirut in toplevel applications
+  menu
+
 * Mon Jan 30 2006 Ray Strode <rstrode@redhat.com> - 5.5.5-1
 - Update to 5.5.5
 - put pirut in toplevel applications menu
