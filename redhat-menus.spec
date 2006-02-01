@@ -3,8 +3,8 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 5.5.5
-Release: 2
+Version: 6.5.4
+Release: 1
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 PreReq: desktop-file-utils >= %{desktop_file_utils_version}
@@ -67,6 +67,10 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Wed Feb 1 2006 Ray Strode <rstrode@redhat.com> - 6.5.4-1
+- merge /usr/local/share/applications
+- ship separate directory file for System menu
+
 * Mon Jan 30 2006 Ray Strode <rstrode@redhat.com> - 5.5.5-2
 - a few more tweaks needed to get pirut in toplevel applications
   menu
