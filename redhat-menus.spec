@@ -4,7 +4,7 @@
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
 Version: 6.5.4
-Release: 1
+Release: 2
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 PreReq: desktop-file-utils >= %{desktop_file_utils_version}
@@ -23,6 +23,7 @@ Conflicts: redhat-artwork < 0.35
 Conflicts: evolution <= 2.4.1-5
 
 Patch0: redhat-menus-5.5.5-fix-pirut.patch
+Patch1: redhat-menus-6.5.4-fix-applications.patch
 
 %description
 
@@ -33,6 +34,7 @@ of "subdirectories" in the menus.
 %prep
 %setup -q
 %patch0 -p1 -b .fix-pirut
+%patch1 -p1 -b .fix-applications
 
 %build
 
@@ -67,6 +69,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Wed Feb 1 2006 Ray Strode <rstrode@redhat.com> - 6.5.4-2
+- fix applications menu
+
 * Wed Feb 1 2006 Ray Strode <rstrode@redhat.com> - 6.5.4-1
 - merge /usr/local/share/applications
 - ship separate directory file for System menu
