@@ -4,7 +4,7 @@
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
 Version: 6.5.4
-Release: 2
+Release: 3
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 PreReq: desktop-file-utils >= %{desktop_file_utils_version}
@@ -14,6 +14,8 @@ Group: User Interface/Desktops
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildArch: noarch
 BuildRequires: desktop-file-utils >= %{desktop_file_utils_version}
+Requires(post): /usr/bin/update-desktop-database
+Requires(postun): /usr/bin/update-desktop-database
 
 ## old nautilus contained start-here stuff
 Conflicts: nautilus <= 2.0.3-1
@@ -69,6 +71,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Sun Feb 5 2006 Matthias Clasen <mclasen@redhat.com> - 6.5.4-3
+- Add missing requires
+
 * Wed Feb 1 2006 Ray Strode <rstrode@redhat.com> - 6.5.4-2
 - fix applications menu
 
