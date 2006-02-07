@@ -3,8 +3,8 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 6.5.4
-Release: 3
+Version: 6.6.4
+Release: 1
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 PreReq: desktop-file-utils >= %{desktop_file_utils_version}
@@ -24,9 +24,6 @@ Conflicts: redhat-artwork < 0.35
 ## old evolution packages point to a no-longer-existing symlink
 Conflicts: evolution <= 2.4.1-5
 
-Patch0: redhat-menus-5.5.5-fix-pirut.patch
-Patch1: redhat-menus-6.5.4-fix-applications.patch
-
 %description
 
 This package contains the XML files that describe the menu layout for 
@@ -35,8 +32,6 @@ of "subdirectories" in the menus.
 
 %prep
 %setup -q
-%patch0 -p1 -b .fix-pirut
-%patch1 -p1 -b .fix-applications
 
 %build
 
@@ -71,6 +66,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Tue Feb 7 2006 Ray Strode <rstrode@redhat.com> - 6.6.4-1
+- use gnome icon names for "-Other" menu files
+
 * Sun Feb 5 2006 Matthias Clasen <mclasen@redhat.com> - 6.5.4-3
 - Add missing requires
 
