@@ -3,7 +3,7 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 6.6.4
+Version: 6.6.5
 Release: 1
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
@@ -66,6 +66,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Thu Feb 9 2006 Matthias Clasen <mclasen@redhat.com> - 6.6.5-1
+- Really move pirut to toplevel
+
 * Tue Feb 7 2006 Ray Strode <rstrode@redhat.com> - 6.6.4-1
 - use gnome icon names for "-Other" menu files
 
