@@ -3,7 +3,7 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 6.6.5
+Version: 6.7.5
 Release: 1
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
@@ -66,6 +66,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Thu Mar 2 2006 Bill Nottingham <notting@redhat.com> - 6.7.5-1
+- add locales (#176139)
+
 * Thu Feb 9 2006 Matthias Clasen <mclasen@redhat.com> - 6.6.5-1
 - Really move pirut to toplevel
 
