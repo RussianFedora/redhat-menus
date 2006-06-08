@@ -4,7 +4,7 @@
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
 Version: 6.7.5
-Release: 2
+Release: 3
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 PreReq: desktop-file-utils >= %{desktop_file_utils_version}
@@ -14,7 +14,7 @@ Group: User Interface/Desktops
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildArch: noarch
 BuildRequires: desktop-file-utils >= %{desktop_file_utils_version}
-BuildRequires: perl(XML::Parser)
+BuildRequires: perl(XML::Parser) gettext
 Requires(post): /usr/bin/update-desktop-database
 Requires(postun): /usr/bin/update-desktop-database
 
@@ -67,8 +67,8 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
-* Thu Jun 08 2006 Jesse Keating <jkeating@redhat.com> - 6.7.5-2
-- Add missing BR of perl-XML-Parser
+* Thu Jun 08 2006 Jesse Keating <jkeating@redhat.com> - 6.7.5-3
+- Add missing BR of perl-XML-Parser, gettext
 
 * Thu Mar 2 2006 Bill Nottingham <notting@redhat.com> - 6.7.5-1
 - add locales (#176139)
