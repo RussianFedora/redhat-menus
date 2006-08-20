@@ -3,8 +3,8 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 6.7.5
-Release: 3
+Version: 6.7.6
+Release: 1%{?dist}
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 PreReq: desktop-file-utils >= %{desktop_file_utils_version}
@@ -67,6 +67,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Sun Aug 20 2006 Matthias Clasen <mclasen@redhat.com> - 6.7.6-1.fc6
+- Make menu editors happy
+
 * Thu Jun 08 2006 Jesse Keating <jkeating@redhat.com> - 6.7.5-3
 - Add missing BR of perl-XML-Parser, gettext
 
