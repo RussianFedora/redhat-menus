@@ -3,7 +3,7 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 6.7.6
+Version: 6.7.8
 Release: 1%{?dist}
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
@@ -67,6 +67,15 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Mon Nov  6 2006 Matthias Clasen <mclasen@redhat.com> - 6.7.8-1
+- Pick up missing translations  (#214241)
+
+* Wed Nov  1 2006 Matthias Clasen <mclasen@redhat.com> - 6.7.7-1
+- Add a documentation menu (#213191)
+
+* Tue Oct 31 2006 Than Ngo <than@redhat.com> - 6.7.6-2.el5
+- add missing kdelegacydirs #213202
+
 * Sun Aug 20 2006 Matthias Clasen <mclasen@redhat.com> - 6.7.6-1.fc6
 - Make menu editors happy
 
