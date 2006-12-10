@@ -3,8 +3,8 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 6.7.8
-Release: 2%{?dist}
+Version: 7.8.9
+Release: 1%{?dist}
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 PreReq: desktop-file-utils >= %{desktop_file_utils_version}
@@ -25,8 +25,6 @@ Conflicts: redhat-artwork < 0.35
 ## old evolution packages point to a no-longer-existing symlink
 Conflicts: evolution <= 2.4.1-5
 
-Patch0: redhat-menus-6.7.8-move-merge-dir.patch
-
 %description
 
 This package contains the XML files that describe the menu layout for 
@@ -35,7 +33,6 @@ of "subdirectories" in the menus.
 
 %prep
 %setup -q
-%patch0 -p1 -b .move-merge-dir
 
 %build
 
@@ -70,6 +67,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Sun Dec 10 2006 Ray Strode <rstrode@redhat.com> - 7.8.9-1
+- Update to 7.8.9
+
 * Mon Nov 20 2006 Ray Strode <rstrode@redhat.com> - 6.7.8-2
 - Move <DefaultMergeDirs/> to end of applications.menu
 
