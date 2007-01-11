@@ -4,7 +4,7 @@
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
 Version: 7.8.9
-Release: 1%{?dist}
+Release: 2%{?dist}
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 PreReq: desktop-file-utils >= %{desktop_file_utils_version}
@@ -46,6 +46,9 @@ make install DESTDIR=$RPM_BUILD_ROOT
 
 %find_lang %{gettext_package}
 
+# this is in gnome-menus now
+rm -f $RPM_BUILD_ROOT%{_datadir}/desktop-directories/System.directory
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -67,6 +70,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Thu Jan 11 2007 Matthias Clasen <mclasen@redhat.com> - 7.8.9-2
+- Resolve a conflict with gnome-menus
+
 * Sun Dec 10 2006 Ray Strode <rstrode@redhat.com> - 7.8.9-1
 - Update to 7.8.9
 
