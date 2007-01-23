@@ -4,9 +4,14 @@
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
 Version: 7.8.9
-Release: 2%{?dist}
+Release: 3%{?dist}
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
+# add the preferences.menu file from upstream, which
+# gives a much better experience in the control center shell
+# do this as a quick patch for now, we need to rethink the
+# menu situation anyway
+Patch0: redhat-menus-7.8.9-cc-shell.patch
 PreReq: desktop-file-utils >= %{desktop_file_utils_version}
 
 License: XFree86
@@ -33,6 +38,7 @@ of "subdirectories" in the menus.
 
 %prep
 %setup -q
+%patch0 -p1 -b .cc-shell
 
 %build
 
@@ -70,6 +76,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Tue Jan 23 2007 Matthias Clasen <mclasen@redhat.com> - 7.8.9-3
+- Update preferences.menu for the control center shell
+
 * Thu Jan 11 2007 Matthias Clasen <mclasen@redhat.com> - 7.8.9-2
 - Resolve a conflict with gnome-menus
 
