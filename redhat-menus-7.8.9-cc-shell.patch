@@ -1,6 +1,6 @@
---- redhat-menus-7.8.9/menus/preferences.menu.cc-shell	2007-01-23 14:47:48.000000000 -0500
-+++ redhat-menus-7.8.9/menus/preferences.menu	2007-01-23 14:48:04.000000000 -0500
-@@ -3,78 +3,108 @@
+--- redhat-menus-7.8.9/menus/preferences.menu.cc-shell	2005-11-22 01:38:46.000000000 -0500
++++ redhat-menus-7.8.9/menus/preferences.menu	2007-01-23 21:46:56.000000000 -0500
+@@ -3,78 +3,118 @@
  
  <Menu>
    <Name>Preferences</Name>
@@ -19,6 +19,16 @@
 +  <!-- Read in overrides and child menus from preferences-merged/ -->
    <DefaultMergeDirs/>
  
++  <!-- Sort the control center categories -->
++  <Layout>
++    <Menuname>Personal</Menuname>
++    <Menuname>Look and Feel</Menuname>
++    <Menuname>Internet and Network</Menuname>
++    <Menuname>Hardware</Menuname>
++    <Menuname>System</Menuname>
++    <Merge type="all" />
++  </Layout>
++  
    <!-- Stuff in the toplevel -->
    <Include>
      <And>
@@ -26,11 +36,11 @@
 -      <Category>X-Red-Hat-Base</Category>
        <Not>
          <Or>
-+          <Category>PersonalSettings</Category>
++          <Category>X-GNOME-PersonalSettings</Category>
 +          <Category>DesktopSettings</Category>
-+          <Category>NetworkSettings</Category>
++          <Category>X-GNOME-NetworkSettings</Category>
 +          <Category>HardwareSettings</Category>
-+          <Category>SystemSettings</Category>
++          <Category>X-GNOME-SystemSettings</Category>
            <Category>System</Category>
 -	  <Category>Accessibility</Category>
          </Or>
@@ -60,7 +70,7 @@
 -            <Category>System</Category>
 -          </Or>
 -        </Not>
-+        <Category>PersonalSettings</Category>
++        <Category>X-GNOME-PersonalSettings</Category>
        </And>
      </Include>
 -  </Menu>
@@ -95,7 +105,7 @@
 -            <Category>X-Red-Hat-Base</Category>
 -          </Or>
 -        </Not>
-+        <Category>NetworkSettings</Category>
++        <Category>X-GNOME-NetworkSettings</Category>
        </And>
 -      <Filename>gnome-gconf-editor</Filename>
      </Include>
@@ -127,15 +137,15 @@
 +      <And>
 +        <Category>Settings</Category>
 +        <Or>
-+          <Category>SystemSettings</Category>
++          <Category>X-GNOME-SystemSettings</Category>
 +          <And>
 +            <Category>System</Category>
 +            <Not>
 +              <Or>
-+                <Category>PersonalSettings</Category>
++                <Category>X-GNOME-PersonalSettings</Category>
 +                <Category>DesktopSettings</Category>
 +                <Category>HardwareSettings</Category>
-+                <Category>NetworkSettings</Category> 
++                <Category>X-GNOME-NetworkSettings</Category> 
 +              </Or>
 +            </Not>
 +          </And>

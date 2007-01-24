@@ -4,7 +4,7 @@
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
 Version: 7.8.9
-Release: 3%{?dist}
+Release: 4%{?dist}
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 # add the preferences.menu file from upstream, which
@@ -76,6 +76,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Tue Jan 23 2007 Matthias Clasen <mclasen@redhat.com> - 7.8.9-4
+- Once more with better categories
+
 * Tue Jan 23 2007 Matthias Clasen <mclasen@redhat.com> - 7.8.9-3
 - Update preferences.menu for the control center shell
 
