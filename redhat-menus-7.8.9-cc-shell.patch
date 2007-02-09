@@ -1,16 +1,5 @@
---- redhat-menus-7.8.9/menus/applications.menu.cc-shell	2007-02-08 23:37:21.000000000 -0500
-+++ redhat-menus-7.8.9/menus/applications.menu	2007-02-08 23:45:21.000000000 -0500
-@@ -119,7 +119,7 @@
-   <!-- System Tools-->
-   <Menu>
-     <Name>System Tools</Name>
--    <Directory>System.directory</Directory>
-+    <Directory>System-Tools.directory</Directory>
-     <Include>
-       <And>
-         <Category>System</Category>
 --- redhat-menus-7.8.9/menus/preferences.menu.cc-shell	2005-11-22 01:38:46.000000000 -0500
-+++ redhat-menus-7.8.9/menus/preferences.menu	2007-02-08 23:36:55.000000000 -0500
++++ redhat-menus-7.8.9/menus/preferences.menu	2007-01-23 21:46:56.000000000 -0500
 @@ -3,78 +3,118 @@
  
  <Menu>

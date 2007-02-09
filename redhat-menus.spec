@@ -4,7 +4,7 @@
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
 Version: 7.8.9
-Release: 5%{?dist}
+Release: 6%{?dist}
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 # add the preferences.menu file from upstream, which
@@ -13,10 +13,9 @@ Source0: %{name}-%{version}.tar.gz
 # menu situation anyway
 Patch0: redhat-menus-7.8.9-cc-shell.patch
 PreReq: desktop-file-utils >= %{desktop_file_utils_version}
-
 License: XFree86
 Group: User Interface/Desktops
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
+BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n) 
 BuildArch: noarch
 BuildRequires: desktop-file-utils >= %{desktop_file_utils_version}
 BuildRequires: perl(XML::Parser) gettext
@@ -76,6 +75,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Fri Feb  9 2007 Matthias Clasen <mclasen@redhat.com> - 7.8.9-6
+- Really don't show gdmflexiserver
+ 
 * Thu Feb  8 2007 Matthias Clasen <mclasen@redhat.com> - 7.8.9-5
 - Reduce the amount of System menus
 
