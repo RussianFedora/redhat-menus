@@ -3,8 +3,8 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 7.8.9
-Release: 6%{?dist}
+Version: 7.8.10
+Release: 1%{?dist}
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 # add the preferences.menu file from upstream, which
@@ -75,6 +75,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Tue Feb 13 2007 Matthias Clasen <mclasen@redhat.com> - 7.8.10-1
+- Use Education
+
 * Fri Feb  9 2007 Matthias Clasen <mclasen@redhat.com> - 7.8.9-6
 - Really don't show gdmflexiserver
  
