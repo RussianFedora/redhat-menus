@@ -3,7 +3,7 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 7.8.10
+Version: 7.8.11
 Release: 1%{?dist}
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
@@ -75,6 +75,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Mon Mar 19 2007 Matthias Clasen <mclasen@redhat.com> - 7.8.11-1
+- Don't use Application category
+
 * Tue Feb 13 2007 Matthias Clasen <mclasen@redhat.com> - 7.8.10-1
 - Use Education
 
