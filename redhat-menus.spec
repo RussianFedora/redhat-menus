@@ -4,7 +4,7 @@
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
 Version: 7.8.11
-Release: 1%{?dist}
+Release: 2%{?dist}
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 # add the preferences.menu file from upstream, which
@@ -12,6 +12,7 @@ Source0: %{name}-%{version}.tar.gz
 # do this as a quick patch for now, we need to rethink the
 # menu situation anyway
 Patch0: redhat-menus-7.8.9-cc-shell.patch
+Patch1: redhat-menus-7.8.11-evolution.patch
 PreReq: desktop-file-utils >= %{desktop_file_utils_version}
 License: XFree86
 Group: User Interface/Desktops
@@ -38,6 +39,7 @@ of "subdirectories" in the menus.
 %prep
 %setup -q
 %patch0 -p1 -b .cc-shell
+%patch1 -p1 -b .evolution
 
 %build
 
@@ -75,6 +77,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Wed Mar 21 2007 Matthew Barnes <mbarnes@redhat.com> - 7.8.11-2
+- Update evolution files, add X-GNOME-Bugzilla-Component (#224199)
+
 * Mon Mar 19 2007 Matthias Clasen <mclasen@redhat.com> - 7.8.11-1
 - Don't use Application category
 
