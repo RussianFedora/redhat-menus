@@ -3,8 +3,8 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 7.8.11
-Release: 2%{?dist}
+Version: 7.8.12
+Release: 1%{?dist}
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 # add the preferences.menu file from upstream, which
@@ -77,6 +77,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Tue Mar 27 2007 Matthias Clasen <mclasen@redhat.com> - 7.8.12-1
+- Use System-Tools for Application > System
+
 * Wed Mar 21 2007 Matthew Barnes <mbarnes@redhat.com> - 7.8.11-2
 - Update evolution files, add X-GNOME-Bugzilla-Component (#224199)
 
