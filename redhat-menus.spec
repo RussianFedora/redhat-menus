@@ -3,7 +3,7 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 7.8.12
+Version: 8.9.10
 Release: 1%{?dist}
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
@@ -77,6 +77,10 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Thu Mar 29 2008 Ray Strode <rstrode@redhat.com> - 8.9.10-1
+- add encoding to all the desktop files that don't have it 
+  (bug 105796)
+
 * Tue Mar 27 2007 Matthias Clasen <mclasen@redhat.com> - 7.8.12-1
 - Use System-Tools for Application > System
 
