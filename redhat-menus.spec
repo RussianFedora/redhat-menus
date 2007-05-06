@@ -4,7 +4,7 @@
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
 Version: 8.9.10
-Release: 1%{?dist}
+Release: 2%{?dist}
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 # add the preferences.menu file from upstream, which
@@ -67,8 +67,6 @@ update-desktop-database %{_datadir}/applications
 
 %files  -f %{gettext_package}.lang
 %defattr(-,root,root)
-%dir %{_sysconfdir}/xdg
-%dir %{_sysconfdir}/xdg/menus
 %dir %{_sysconfdir}/xdg/menus/applications-merged
 %dir %{_sysconfdir}/xdg/menus/preferences-merged
 %dir %{_sysconfdir}/xdg/menus/preferences-post-merged
@@ -77,7 +75,11 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
-* Thu Mar 29 2008 Ray Strode <rstrode@redhat.com> - 8.9.10-1
+* Sun May  6 2007 Matthias Clasen <mclasen@redhat.com> - 8.9.10-2
+- Don't own directories that are already owned by 
+  the filesystem package
+
+* Thu Mar 29 2007 Ray Strode <rstrode@redhat.com> - 8.9.10-1
 - add encoding to all the desktop files that don't have it 
   (bug 105796)
 
