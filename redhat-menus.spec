@@ -4,7 +4,7 @@
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
 Version: 8.9.10
-Release: 3%{?dist}
+Release: 4%{?dist}
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 # add the preferences.menu file from upstream, which
@@ -13,6 +13,8 @@ Source0: %{name}-%{version}.tar.gz
 # menu situation anyway
 Patch0: redhat-menus-7.8.9-cc-shell.patch
 Patch1: redhat-menus-7.8.11-evolution.patch
+# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=241058
+Patch2: redhat-menus-8.9.10-hide-screensavers.patch
 PreReq: desktop-file-utils >= %{desktop_file_utils_version}
 License: XFree86
 Group: User Interface/Desktops
@@ -40,6 +42,7 @@ of "subdirectories" in the menus.
 %setup -q
 %patch0 -p1 -b .cc-shell
 %patch1 -p1 -b .evolution
+%patch2 -p1 -b .hide-screensavers
 
 %build
 
@@ -75,6 +78,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Tue Jun 26 2007 Ray Strode <rstrode@redhat.com> - 8.9.10-4
+- hide screensavers from menus (bug 241058)
+
 * Thu Jun 07 2007 Matthew Barnes <mbarnes@redhat.com> - 8.9.10-3
 - Add X-GNOME-Bugzilla-Version to Evolution desktop files (#243101).
 - Bump evolution-data-server version in desktop files to 1.12.
