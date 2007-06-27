@@ -1,0 +1,159 @@
+--- redhat-menus-8.9.10/menus/applications.menu.categories	2007-06-27 01:37:57.000000000 -0400
++++ redhat-menus-8.9.10/menus/applications.menu	2007-06-27 01:39:42.000000000 -0400
+@@ -123,10 +123,8 @@
+     <Include>
+       <And>
+         <Category>System</Category>
++	<Not><Category>Settings</Category></Not>
+         <Not><Category>Screensaver</Category></Not>
+-        <Not><Category>X-Red-Hat-ServerConfig</Category></Not>
+-        <Not><Category>SystemSetup</Category></Not>
+-	<Not><Category>Monitor</Category></Not>
+       </And>
+     </Include>
+ 
+@@ -167,8 +165,6 @@
+       <And>
+         <Not><Category>Core</Category></Not>
+         <Not><Category>Settings</Category></Not>
+-        <Not><Category>Monitor</Category></Not>
+-        <Not><Category>SystemSetup</Category></Not>
+         <Not><Category>X-Red-Hat-ServerConfig</Category></Not>
+         <Not><Category>Screensaver</Category></Not>
+       </And>
+--- redhat-menus-8.9.10/menus/preferences.menu.categories	2007-06-27 01:38:03.000000000 -0400
++++ redhat-menus-8.9.10/menus/preferences.menu	2007-06-27 01:41:52.000000000 -0400
+@@ -28,12 +28,12 @@
+       <Category>Settings</Category>
+       <Not>
+         <Or>
+-          <Category>X-GNOME-PersonalSettings</Category>
++          <Category>System</Category>
+           <Category>DesktopSettings</Category>
+-          <Category>X-GNOME-NetworkSettings</Category>
+           <Category>HardwareSettings</Category>
++          <Category>X-GNOME-PersonalSettings</Category>
++          <Category>X-GNOME-NetworkSettings</Category>
+           <Category>X-GNOME-SystemSettings</Category>
+-          <Category>System</Category>
+         </Or>
+       </Not>
+     </And>
+@@ -52,6 +52,7 @@
+       <And>
+         <Category>Settings</Category>
+         <Category>X-GNOME-PersonalSettings</Category>
++        <Not><Category>System</Category></Not>
+       </And>
+     </Include>
+   </Menu> <!-- End Personal -->
+@@ -64,6 +65,7 @@
+       <And>
+         <Category>Settings</Category>
+         <Category>DesktopSettings</Category>
++        <Not><Category>System</Category></Not>
+       </And>
+     </Include>
+   </Menu> <!-- End Look and Feel -->
+@@ -76,6 +78,7 @@
+       <And>
+         <Category>Settings</Category>
+         <Category>X-GNOME-NetworkSettings</Category>
++        <Not><Category>System</Category></Not>
+       </And>
+     </Include>
+   </Menu> <!-- End Internet and Network -->
+@@ -88,6 +91,7 @@
+       <And>
+         <Category>Settings</Category>
+         <Category>HardwareSettings</Category>
++        <Not><Category>System</Category></Not>
+       </And>
+     </Include>
+   </Menu> <!-- End Hardware -->
+@@ -99,20 +103,8 @@
+     <Include>
+       <And>
+         <Category>Settings</Category>
+-        <Or>
+-          <Category>X-GNOME-SystemSettings</Category>
+-          <And>
+-            <Category>System</Category>
+-            <Not>
+-              <Or>
+-                <Category>X-GNOME-PersonalSettings</Category>
+-                <Category>DesktopSettings</Category>
+-                <Category>HardwareSettings</Category>
+-                <Category>X-GNOME-NetworkSettings</Category> 
+-              </Or>
+-            </Not>
+-          </And>
+-        </Or>
++        <Category>X-GNOME-SystemSettings</Category>
++        <Not><Category>System</Category></Not>
+       </And>
+     </Include>
+   </Menu> <!-- End System -->
+--- redhat-menus-8.9.10/menus/system-settings.menu.categories	2007-06-27 01:38:11.000000000 -0400
++++ redhat-menus-8.9.10/menus/system-settings.menu	2007-06-27 01:44:18.000000000 -0400
+@@ -18,7 +18,9 @@
+   <DefaultMergeDirs/>
+ 
+   <!-- No 1-element subdirectories, please -->
+-  <DefaultLayout inline="true" inline_limit="1"><Merge type="all"/></DefaultLayout>
++  <DefaultLayout inline="true" inline_limit="1">
++    <Merge type="all"/>
++  </DefaultLayout>
+ 
+   <!-- Merge in server settings -->
+   <Menu>
+@@ -30,10 +32,8 @@
+ 
+   <Include>
+     <And>
+-      <Or>
+-        <Category>SystemSetup</Category>
+-        <Category>Monitor</Category>
+-      </Or>
++      <Category>Settings</Category>
++      <Category>System</Category>
+       <Not><Category>X-Red-Hat-ServerConfig</Category></Not>
+       <Not><Category>Screensaver</Category></Not>
+     </And>
+@@ -45,35 +45,12 @@
+     <Filename>system-config-keyboard.desktop</Filename>
+     <Filename>system-config-language.desktop</Filename>
+     <Filename>system-config-mouse.desktop</Filename>
++    <Filename>system-config-display.desktop</Filename>
+     <Filename>system-config-rootpassword.desktop</Filename>
+     <Filename>system-config-securitylevel.desktop</Filename>
+     <Filename>system-config-soundcard.desktop</Filename>
+     <Filename>system-config-users.desktop</Filename>
+     <Filename>redhat-neat.desktop</Filename>
+-    <Filename>redhat-printconf-gui.desktop</Filename>
+-    <Filename>redhat-rhn-up2date-config.desktop</Filename>
+   </Include>
+ 
+-  <Exclude>
+-    <Filename>system-config-packages.desktop</Filename>
+-  </Exclude>
+-
+-  <!-- More System Settings -->
+-  <Menu>
+-    <Name>MoreSystemSettings</Name>
+-    <Directory>SystemConfig-More.directory</Directory>
+-    <Include>
+-      <And>
+-        <Category>SystemSetup</Category>
+-        <Not><Category>X-Red-Hat-Base-Only</Category></Not>
+-        <Not><Category>X-Red-Hat-Base</Category></Not>
+-        <Not><Category>X-Red-Hat-ServerConfig</Category></Not>
+-        <Not><Category>Screensaver</Category></Not>
+-      </And>
+-      <Filename>redhat-switchdesk.desktop</Filename>
+-      <Filename>redhat-switchmail.desktop</Filename>
+-      <Filename>redhat-switch-printer.desktop</Filename>
+-    </Include>
+-  </Menu> <!-- End More System Settings -->
+-
+ </Menu>     <!-- End System Settings -->

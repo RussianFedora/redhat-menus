@@ -15,6 +15,7 @@ Patch0: redhat-menus-7.8.9-cc-shell.patch
 Patch1: redhat-menus-7.8.11-evolution.patch
 # https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=241058
 Patch2: redhat-menus-8.9.10-hide-screensavers.patch
+Patch3: categories.patch
 PreReq: desktop-file-utils >= %{desktop_file_utils_version}
 License: XFree86
 Group: User Interface/Desktops
@@ -43,6 +44,7 @@ of "subdirectories" in the menus.
 %patch0 -p1 -b .cc-shell
 %patch1 -p1 -b .evolution
 %patch2 -p1 -b .hide-screensavers
+%patch3 -p1 -b .categories
 
 %build
 
@@ -78,6 +80,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Wed Jun 27 2007 Matthias Clasen <mclasen@redhat.com> - 8.9.10-5
+- Clean up use of categories in menu files
+
 * Tue Jun 26 2007 Ray Strode <rstrode@redhat.com> - 8.9.10-4
 - hide screensavers from menus (bug 241058)
 
