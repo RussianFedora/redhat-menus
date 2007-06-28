@@ -1,5 +1,6 @@
---- redhat-menus-8.9.10/menus/applications.menu.categories	2007-06-27 01:37:57.000000000 -0400
-+++ redhat-menus-8.9.10/menus/applications.menu	2007-06-27 09:00:37.000000000 -0400
+diff -up redhat-menus-8.9.10/menus/applications.menu.categories redhat-menus-8.9.10/menus/applications.menu
+--- redhat-menus-8.9.10/menus/applications.menu.categories	2007-06-27 23:42:13.000000000 -0400
++++ redhat-menus-8.9.10/menus/applications.menu	2007-06-27 23:42:48.000000000 -0400
 @@ -123,21 +123,14 @@
      <Include>
        <And>
@@ -35,17 +36,17 @@
        <Filename>redhat-switchdesk.desktop</Filename>
        <Filename>redhat-switchmail.desktop</Filename>
        <Filename>redhat-switch-printer.desktop</Filename>
-@@ -167,8 +157,6 @@
+@@ -167,7 +157,6 @@
        <And>
          <Not><Category>Core</Category></Not>
          <Not><Category>Settings</Category></Not>
 -        <Not><Category>Monitor</Category></Not>
--        <Not><Category>SystemSetup</Category></Not>
+         <Not><Category>SystemSetup</Category></Not>
          <Not><Category>X-Red-Hat-ServerConfig</Category></Not>
          <Not><Category>Screensaver</Category></Not>
-       </And>
---- redhat-menus-8.9.10/menus/preferences.menu.categories	2007-06-27 01:38:03.000000000 -0400
-+++ redhat-menus-8.9.10/menus/preferences.menu	2007-06-27 01:41:52.000000000 -0400
+diff -up redhat-menus-8.9.10/menus/preferences.menu.categories redhat-menus-8.9.10/menus/preferences.menu
+--- redhat-menus-8.9.10/menus/preferences.menu.categories	2007-06-27 23:42:13.000000000 -0400
++++ redhat-menus-8.9.10/menus/preferences.menu	2007-06-27 23:42:13.000000000 -0400
 @@ -28,12 +28,12 @@
        <Category>Settings</Category>
        <Not>
@@ -117,8 +118,9 @@
        </And>
      </Include>
    </Menu> <!-- End System -->
---- redhat-menus-8.9.10/menus/system-settings.menu.categories	2007-06-27 01:38:11.000000000 -0400
-+++ redhat-menus-8.9.10/menus/system-settings.menu	2007-06-27 09:01:19.000000000 -0400
+diff -up redhat-menus-8.9.10/menus/system-settings.menu.categories redhat-menus-8.9.10/menus/system-settings.menu
+--- redhat-menus-8.9.10/menus/system-settings.menu.categories	2007-03-19 13:45:14.000000000 -0400
++++ redhat-menus-8.9.10/menus/system-settings.menu	2007-06-27 23:43:16.000000000 -0400
 @@ -18,7 +18,9 @@
    <DefaultMergeDirs/>
  
@@ -143,7 +145,7 @@
        <Not><Category>X-Red-Hat-ServerConfig</Category></Not>
        <Not><Category>Screensaver</Category></Not>
      </And>
-@@ -41,39 +41,13 @@
+@@ -41,39 +41,14 @@
  
    <Include>
      <Filename>redhat-authconfig.desktop</Filename>
@@ -155,6 +157,7 @@
      <Filename>system-config-securitylevel.desktop</Filename>
      <Filename>system-config-soundcard.desktop</Filename>
 -    <Filename>system-config-users.desktop</Filename>
++    <Filename>system-config-lvm.desktop</Filename>
      <Filename>redhat-neat.desktop</Filename>
 -    <Filename>redhat-printconf-gui.desktop</Filename>
 -    <Filename>redhat-rhn-up2date-config.desktop</Filename>
