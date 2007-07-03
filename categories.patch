@@ -1,7 +1,7 @@
 diff -up redhat-menus-8.9.10/menus/applications.menu.categories redhat-menus-8.9.10/menus/applications.menu
---- redhat-menus-8.9.10/menus/applications.menu.categories	2007-06-27 23:42:13.000000000 -0400
-+++ redhat-menus-8.9.10/menus/applications.menu	2007-06-27 23:42:48.000000000 -0400
-@@ -123,21 +123,14 @@
+--- redhat-menus-8.9.10/menus/applications.menu.categories	2007-07-02 22:35:48.000000000 -0400
++++ redhat-menus-8.9.10/menus/applications.menu	2007-07-02 22:36:44.000000000 -0400
+@@ -123,23 +123,15 @@
      <Include>
        <And>
          <Category>System</Category>
@@ -22,9 +22,11 @@ diff -up redhat-menus-8.9.10/menus/applications.menu.categories redhat-menus-8.9
        <Filename>redhat-usermount.desktop</Filename>
 -      <Filename>system-config-date.desktop</Filename>
        <Filename>system-config-keyboard.desktop</Filename>
-       <Filename>system-config-language.desktop</Filename>
+-      <Filename>system-config-language.desktop</Filename>
        <Filename>system-config-mouse.desktop</Filename>
-@@ -147,11 +140,8 @@
+       <Filename>system-config-nfs.desktop</Filename>
+       <Filename>pirut.desktop</Filename>
+@@ -147,11 +139,8 @@
        <Filename>system-config-securitylevel.desktop</Filename>
        <Filename>system-config-services.desktop</Filename>
        <Filename>system-config-soundcard.desktop</Filename>
@@ -36,7 +38,7 @@ diff -up redhat-menus-8.9.10/menus/applications.menu.categories redhat-menus-8.9
        <Filename>redhat-switchdesk.desktop</Filename>
        <Filename>redhat-switchmail.desktop</Filename>
        <Filename>redhat-switch-printer.desktop</Filename>
-@@ -167,7 +157,6 @@
+@@ -167,7 +156,6 @@
        <And>
          <Not><Category>Core</Category></Not>
          <Not><Category>Settings</Category></Not>
@@ -45,8 +47,8 @@ diff -up redhat-menus-8.9.10/menus/applications.menu.categories redhat-menus-8.9
          <Not><Category>X-Red-Hat-ServerConfig</Category></Not>
          <Not><Category>Screensaver</Category></Not>
 diff -up redhat-menus-8.9.10/menus/preferences.menu.categories redhat-menus-8.9.10/menus/preferences.menu
---- redhat-menus-8.9.10/menus/preferences.menu.categories	2007-06-27 23:42:13.000000000 -0400
-+++ redhat-menus-8.9.10/menus/preferences.menu	2007-06-27 23:42:13.000000000 -0400
+--- redhat-menus-8.9.10/menus/preferences.menu.categories	2007-07-02 22:35:48.000000000 -0400
++++ redhat-menus-8.9.10/menus/preferences.menu	2007-07-02 22:35:48.000000000 -0400
 @@ -28,12 +28,12 @@
        <Category>Settings</Category>
        <Not>
@@ -120,7 +122,7 @@ diff -up redhat-menus-8.9.10/menus/preferences.menu.categories redhat-menus-8.9.
    </Menu> <!-- End System -->
 diff -up redhat-menus-8.9.10/menus/system-settings.menu.categories redhat-menus-8.9.10/menus/system-settings.menu
 --- redhat-menus-8.9.10/menus/system-settings.menu.categories	2007-03-19 13:45:14.000000000 -0400
-+++ redhat-menus-8.9.10/menus/system-settings.menu	2007-06-27 23:43:16.000000000 -0400
++++ redhat-menus-8.9.10/menus/system-settings.menu	2007-07-02 22:36:56.000000000 -0400
 @@ -18,7 +18,9 @@
    <DefaultMergeDirs/>
  
@@ -145,13 +147,13 @@ diff -up redhat-menus-8.9.10/menus/system-settings.menu.categories redhat-menus-
        <Not><Category>X-Red-Hat-ServerConfig</Category></Not>
        <Not><Category>Screensaver</Category></Not>
      </And>
-@@ -41,39 +41,14 @@
+@@ -41,39 +41,13 @@
  
    <Include>
      <Filename>redhat-authconfig.desktop</Filename>
 -    <Filename>system-config-date.desktop</Filename>
      <Filename>system-config-keyboard.desktop</Filename>
-     <Filename>system-config-language.desktop</Filename>
+-    <Filename>system-config-language.desktop</Filename>
      <Filename>system-config-mouse.desktop</Filename>
      <Filename>system-config-rootpassword.desktop</Filename>
      <Filename>system-config-securitylevel.desktop</Filename>

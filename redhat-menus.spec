@@ -4,7 +4,7 @@
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
 Version: 8.9.10
-Release: 7%{?dist}
+Release: 8%{?dist}
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 # add the preferences.menu file from upstream, which
@@ -80,6 +80,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Wed Jul  2 2007 Matthias Clasen <mclasen@redhat.com> - 8.9.10-8
+- More category finetuning
+
 * Wed Jun 27 2007 Matthias Clasen <mclasen@redhat.com> - 8.9.10-7
 - More category finetuning
 
