@@ -4,7 +4,7 @@
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
 Version: 8.9.10
-Release: 8%{?dist}
+Release: 9%{?dist}
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 # add the preferences.menu file from upstream, which
@@ -61,6 +61,10 @@ make install DESTDIR=$RPM_BUILD_ROOT
 # this is in gnome-menus now
 rm -f $RPM_BUILD_ROOT%{_datadir}/desktop-directories/System.directory
 
+# create the settings-merged to prevent gamin from looking for it
+# in a loop
+mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/xdg/menus/settings-merged ||:
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -75,11 +79,15 @@ update-desktop-database %{_datadir}/applications
 %dir %{_sysconfdir}/xdg/menus/applications-merged
 %dir %{_sysconfdir}/xdg/menus/preferences-merged
 %dir %{_sysconfdir}/xdg/menus/preferences-post-merged
+%dir %{_sysconfdir}/xdg/menus/settings-merged
 %config %{_sysconfdir}/xdg/menus/*.menu
 %{_datadir}/desktop-menu-patches/*.desktop
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Thu Sep  6 2007 Ray Strode <rstrode@redhat.com> - 8.9.10-9
+- create /etx/xdg/menus/settings-merged by default
+
 * Wed Jul  2 2007 Matthias Clasen <mclasen@redhat.com> - 8.9.10-8
 - More category finetuning
 
