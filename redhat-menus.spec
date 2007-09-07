@@ -4,7 +4,7 @@
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
 Version: 8.9.10
-Release: 9%{?dist}
+Release: 10%{?dist}
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 # add the preferences.menu file from upstream, which
@@ -85,6 +85,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Fri Sep  7 2007 Matthias Clasen <mclasen@redhat.com> - 8.9.10-10
+- More category finetuning; remove remaining overrides
+
 * Thu Sep  6 2007 Ray Strode <rstrode@redhat.com> - 8.9.10-9
 - create /etx/xdg/menus/settings-merged by default
 
