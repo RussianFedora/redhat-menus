@@ -13,6 +13,7 @@ BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch: noarch
 BuildRequires: desktop-file-utils >= %{desktop_file_utils_version}
 BuildRequires: perl(XML::Parser) gettext
+BuildRequires: intltlool automake autoconf
 Requires(post): desktop-file-utils >= %{desktop_file_utils_version}
 Requires(postun): desktop-file-utils >= %{desktop_file_utils_version}
 
@@ -33,7 +34,9 @@ of "subdirectories" in the menus.
 %setup -q
 
 %build
-
+intltoolize --force
+automake
+autoconf
 %configure
 make
 
