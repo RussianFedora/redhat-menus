@@ -3,28 +3,18 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 8.9.10
-Release: 10%{?dist}
+Version: 8.9.11
+Release: 1%{?dist}
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
-# add the preferences.menu file from upstream, which
-# gives a much better experience in the control center shell
-# do this as a quick patch for now, we need to rethink the
-# menu situation anyway
-Patch0: redhat-menus-7.8.9-cc-shell.patch
-Patch1: redhat-menus-7.8.11-evolution.patch
-# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=241058
-Patch2: redhat-menus-8.9.10-hide-screensavers.patch
-Patch3: categories.patch
-PreReq: desktop-file-utils >= %{desktop_file_utils_version}
-License: XFree86
+License: GPL+
 Group: User Interface/Desktops
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n) 
 BuildArch: noarch
 BuildRequires: desktop-file-utils >= %{desktop_file_utils_version}
 BuildRequires: perl(XML::Parser) gettext
-Requires(post): /usr/bin/update-desktop-database
-Requires(postun): /usr/bin/update-desktop-database
+Requires(post): desktop-file-utils >= %{desktop_file_utils_version}
+Requires(postun): desktop-file-utils >= %{desktop_file_utils_version}
 
 ## old nautilus contained start-here stuff
 Conflicts: nautilus <= 2.0.3-1
@@ -41,10 +31,6 @@ of "subdirectories" in the menus.
 
 %prep
 %setup -q
-%patch0 -p1 -b .cc-shell
-%patch1 -p1 -b .evolution
-%patch2 -p1 -b .hide-screensavers
-%patch3 -p1 -b .categories
 
 %build
 
@@ -76,6 +62,7 @@ update-desktop-database %{_datadir}/applications
 
 %files  -f %{gettext_package}.lang
 %defattr(-,root,root)
+%doc COPYING
 %dir %{_sysconfdir}/xdg/menus/applications-merged
 %dir %{_sysconfdir}/xdg/menus/preferences-merged
 %dir %{_sysconfdir}/xdg/menus/preferences-post-merged
@@ -85,6 +72,11 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Mon Oct  1 2007 Matthias Clasen <mclasen@redhat.com> - 8.9.11-1
+- Move patches upstream
+- Fix license field
+- Spec file fixes
+
 * Fri Sep  7 2007 Matthias Clasen <mclasen@redhat.com> - 8.9.10-10
 - More category finetuning; remove remaining overrides
 
