@@ -4,7 +4,7 @@
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
 Version: 8.9.11
-Release: 1%{?dist}
+Release: 2%{?dist}
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 License: GPL+
@@ -24,6 +24,8 @@ Conflicts: redhat-artwork < 0.35
 ## old evolution packages point to a no-longer-existing symlink
 Conflicts: evolution <= 2.4.1-5
 
+Patch0: redhat-menus-8.9.11-evolution.patch
+
 %description
 
 This package contains the XML files that describe the menu layout for 
@@ -32,6 +34,7 @@ of "subdirectories" in the menus.
 
 %prep
 %setup -q
+%patch0 -p1 -b .evolution
 
 %build
 intltoolize --force
@@ -75,6 +78,10 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Sat Jan  5 2008 Matthew Barnes <mbarnes@redhat.com> - 8.9.11-2
+- Send all Evolution bugs to the new BugBuddyBugs Bugzilla component.
+  (GNOME bug #507311)
+
 * Mon Oct  1 2007 Matthias Clasen <mclasen@redhat.com> - 8.9.11-1
 - Move patches upstream
 - Fix license field
