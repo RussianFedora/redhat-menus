@@ -1,5 +1,6 @@
+diff -up redhat-menus-8.9.10/desktop-files/redhat-evolution-tasks.desktop.in.evolution redhat-menus-8.9.10/desktop-files/redhat-evolution-tasks.desktop.in
 --- redhat-menus-8.9.10/desktop-files/redhat-evolution-tasks.desktop.in.evolution	2005-10-28 13:31:58.000000000 -0400
-+++ redhat-menus-8.9.10/desktop-files/redhat-evolution-tasks.desktop.in	2007-06-07 10:59:34.000000000 -0400
++++ redhat-menus-8.9.10/desktop-files/redhat-evolution-tasks.desktop.in	2008-01-05 19:32:52.000000000 -0500
 @@ -8,6 +8,8 @@ Type=Application
  Encoding=UTF-8
  Categories=X-Red-Hat-Base;X-Red-Hat-Base-Only;Office;Application;
@@ -9,10 +10,11 @@
  X-GNOME-Bugzilla-Product=Evolution
 -X-GNOME-Bugzilla-OtherBinaries=evolution-data-server-1.4;evolution-exchange-storage;evolution-alarm-notify;
 +X-GNOME-Bugzilla-Version=2.10
-+X-GNOME-Bugzilla-Component=Tasks
++X-GNOME-Bugzilla-Component=BugBuddyBugs
 +X-GNOME-Bugzilla-OtherBinaries=evolution-data-server-1.10;evolution-exchange-storage;evolution-alarm-notify;
+diff -up redhat-menus-8.9.10/desktop-files/redhat-evolution-calendar.desktop.in.evolution redhat-menus-8.9.10/desktop-files/redhat-evolution-calendar.desktop.in
 --- redhat-menus-8.9.10/desktop-files/redhat-evolution-calendar.desktop.in.evolution	2005-10-28 13:31:58.000000000 -0400
-+++ redhat-menus-8.9.10/desktop-files/redhat-evolution-calendar.desktop.in	2007-06-07 10:59:20.000000000 -0400
++++ redhat-menus-8.9.10/desktop-files/redhat-evolution-calendar.desktop.in	2008-01-05 19:32:29.000000000 -0500
 @@ -8,6 +8,8 @@ Type=Application
  Encoding=UTF-8
  Categories=X-Red-Hat-Base;X-Red-Hat-Base-Only;Office;Application;
@@ -22,10 +24,11 @@
  X-GNOME-Bugzilla-Product=Evolution
 -X-GNOME-Bugzilla-OtherBinaries=evolution-data-server-1.4;evolution-exchange-storage;evolution-alarm-notify;
 +X-GNOME-Bugzilla-Version=2.10
-+X-GNOME-Bugzilla-Component=Calendar
++X-GNOME-Bugzilla-Component=BugBuddyBugs
 +X-GNOME-Bugzilla-OtherBinaries=evolution-data-server-1.10;evolution-exchange-storage;evolution-alarm-notify;
+diff -up redhat-menus-8.9.10/desktop-files/redhat-evolution-contacts.desktop.in.evolution redhat-menus-8.9.10/desktop-files/redhat-evolution-contacts.desktop.in
 --- redhat-menus-8.9.10/desktop-files/redhat-evolution-contacts.desktop.in.evolution	2005-10-28 13:31:58.000000000 -0400
-+++ redhat-menus-8.9.10/desktop-files/redhat-evolution-contacts.desktop.in	2007-06-07 10:59:25.000000000 -0400
++++ redhat-menus-8.9.10/desktop-files/redhat-evolution-contacts.desktop.in	2008-01-05 19:32:36.000000000 -0500
 @@ -8,6 +8,8 @@ Type=Application
  Encoding=UTF-8
  Categories=X-Red-Hat-Base;X-Red-Hat-Base-Only;Network;Application;
@@ -35,10 +38,11 @@
  X-GNOME-Bugzilla-Product=Evolution
 -X-GNOME-Bugzilla-OtherBinaries=evolution-data-server-1.4;evolution-exchange-storage;evolution-alarm-notify;
 +X-GNOME-Bugzilla-Version=2.10
-+X-GNOME-Bugzilla-Component=Contacts
++X-GNOME-Bugzilla-Component=BugBuddyBugs
 +X-GNOME-Bugzilla-OtherBinaries=evolution-data-server-1.10;evolution-exchange-storage;evolution-alarm-notify;
+diff -up redhat-menus-8.9.10/desktop-files/redhat-evolution-mail.desktop.in.evolution redhat-menus-8.9.10/desktop-files/redhat-evolution-mail.desktop.in
 --- redhat-menus-8.9.10/desktop-files/redhat-evolution-mail.desktop.in.evolution	2005-10-28 13:31:58.000000000 -0400
-+++ redhat-menus-8.9.10/desktop-files/redhat-evolution-mail.desktop.in	2007-06-07 10:59:29.000000000 -0400
++++ redhat-menus-8.9.10/desktop-files/redhat-evolution-mail.desktop.in	2008-01-05 19:32:44.000000000 -0500
 @@ -8,6 +8,8 @@ Type=Application
  Encoding=UTF-8
  Categories=X-Red-Hat-Base;X-Red-Hat-Base-Only;Network;Application;
@@ -48,5 +52,5 @@
  X-GNOME-Bugzilla-Product=Evolution
 -X-GNOME-Bugzilla-OtherBinaries=evolution-data-server-1.4;evolution-exchange-storage;evolution-alarm-notify;
 +X-GNOME-Bugzilla-Version=2.10
-+X-GNOME-Bugzilla-Component=Mailer
++X-GNOME-Bugzilla-Component=BugBuddyBugs
 +X-GNOME-Bugzilla-OtherBinaries=evolution-data-server-1.10;evolution-exchange-storage;evolution-alarm-notify;

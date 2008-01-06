@@ -4,7 +4,7 @@
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
 Version: 8.9.10
-Release: 3%{?dist}
+Release: 4%{?dist}
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 # add the preferences.menu file from upstream, which
@@ -75,6 +75,10 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Sat Jan 05 2008 Matthew Barnes <mbarnes@redhat.com> - 8.9.10-4
+- Send all Evolution bugs to the new BugBuddyBugs Bugzilla category.
+  (GNOME bug #507311)
+
 * Thu Jun 07 2007 Matthew Barnes <mbarnes@redhat.com> - 8.9.10-3
 - Add X-GNOME-Bugzilla-Version to Evolution desktop files (#243101).
 
