@@ -40,6 +40,7 @@ of "subdirectories" in the menus.
 
 %build
 intltoolize --force
+aclocal
 automake
 autoconf
 %configure
