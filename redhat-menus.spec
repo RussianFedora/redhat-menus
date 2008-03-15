@@ -14,6 +14,7 @@ BuildArch: noarch
 BuildRequires: desktop-file-utils >= %{desktop_file_utils_version}
 BuildRequires: perl(XML::Parser) gettext
 BuildRequires: intltool automake autoconf libtool
+BuildRequires: glib2-devel
 Requires(post): desktop-file-utils >= %{desktop_file_utils_version}
 Requires(postun): desktop-file-utils >= %{desktop_file_utils_version}
 
