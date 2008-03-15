@@ -13,7 +13,7 @@ BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch: noarch
 BuildRequires: desktop-file-utils >= %{desktop_file_utils_version}
 BuildRequires: perl(XML::Parser) gettext
-BuildRequires: intltool automake autoconf
+BuildRequires: intltool automake autoconf libtool
 Requires(post): desktop-file-utils >= %{desktop_file_utils_version}
 Requires(postun): desktop-file-utils >= %{desktop_file_utils_version}
 
