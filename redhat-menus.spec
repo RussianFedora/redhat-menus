@@ -4,7 +4,7 @@
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
 Version: 8.9.11
-Release: 2%{?dist}
+Release: 3%{?dist}
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 License: GPL+
@@ -25,6 +25,7 @@ Conflicts: redhat-artwork < 0.35
 Conflicts: evolution <= 2.4.1-5
 
 Patch0: redhat-menus-8.9.11-evolution.patch
+Patch1: redhat-menus-8.9.11-pirut.patch
 
 %description
 
@@ -35,6 +36,7 @@ of "subdirectories" in the menus.
 %prep
 %setup -q
 %patch0 -p1 -b .evolution
+%patch1 -p1 -b .pirut
 
 %build
 intltoolize --force
@@ -78,6 +80,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Fri Mar 14 2008 Matthias Clasen <mclasen@redhat.com> - 8.9.11-3
+- Remove special handling for pirut
+
 * Sat Jan  5 2008 Matthew Barnes <mbarnes@redhat.com> - 8.9.11-2
 - Send all Evolution bugs to the new BugBuddyBugs Bugzilla component.
   (GNOME bug #507311)
