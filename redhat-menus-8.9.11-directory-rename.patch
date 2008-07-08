@@ -1,0 +1,61 @@
+diff -up redhat-menus-8.9.11/menus/applications.menu.directory-rename redhat-menus-8.9.11/menus/applications.menu
+--- redhat-menus-8.9.11/menus/applications.menu.directory-rename	2008-07-08 14:29:14.000000000 -0400
++++ redhat-menus-8.9.11/menus/applications.menu	2008-07-08 14:38:58.000000000 -0400
+@@ -21,7 +21,7 @@
+   <!-- Accessories submenu -->
+   <Menu>
+     <Name>Accessories</Name>
+-    <Directory>Accessories.directory</Directory>
++    <Directory>Utility.directory</Directory>
+     <Include>
+       <And>
+         <Category>Utility</Category>
+@@ -57,7 +57,7 @@
+   <!-- Games -->
+   <Menu>
+     <Name>Games</Name>
+-    <Directory>Games.directory</Directory>
++    <Directory>Game.directory</Directory>
+     <Include>
+       <And>
+         <Category>Game</Category>
+@@ -79,7 +79,7 @@
+   <!-- Internet -->
+   <Menu>
+     <Name>Internet</Name>
+-    <Directory>Internet.directory</Directory>
++    <Directory>Network.directory</Directory>
+     <Include>
+       <And>
+         <Category>Network</Category>
+@@ -91,7 +91,7 @@
+   <!-- Multimedia -->
+   <Menu>
+     <Name>Multimedia</Name>
+-    <Directory>Multimedia.directory</Directory>
++    <Directory>AudioVideo.directory</Directory>
+     <Include>
+       <And>
+         <Category>AudioVideo</Category>
+@@ -127,7 +127,7 @@
+   <!-- Other -->
+   <Menu>
+     <Name>Other</Name>
+-    <Directory>Other.directory</Directory>
++    <Directory>X-GNOME-Other.directory</Directory>
+     <OnlyUnallocated/>
+     <Include>
+       <And>
+diff -up redhat-menus-8.9.11/menus/preferences.menu.directory-rename redhat-menus-8.9.11/menus/preferences.menu
+--- redhat-menus-8.9.11/menus/preferences.menu.directory-rename	2008-07-08 14:40:45.000000000 -0400
++++ redhat-menus-8.9.11/menus/preferences.menu	2008-07-08 14:40:55.000000000 -0400
+@@ -3,7 +3,7 @@
+ 
+ <Menu>
+   <Name>Preferences</Name>
+-  <Directory>Preferences.directory</Directory>
++  <Directory>Settings.directory</Directory>
+ 
+   <!-- Read standard .directory and .desktop file locations -->
+   <DefaultAppDirs/>
+diff -up redhat-menus-8.9.11/menus/settings.menu.directory-rename redhat-menus-8.9.11/menus/settings.menu
