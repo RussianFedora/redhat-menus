@@ -4,7 +4,7 @@
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
 Version: 8.9.11
-Release: 4%{?dist}
+Release: 5%{?dist}
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 License: GPL+
@@ -76,6 +76,7 @@ update-desktop-database %{_datadir}/applications
 %files  -f %{gettext_package}.lang
 %defattr(-,root,root)
 %doc COPYING
+%dir %{_sysconfdir}/xdg/menus
 %dir %{_sysconfdir}/xdg/menus/applications-merged
 %dir %{_sysconfdir}/xdg/menus/preferences-merged
 %dir %{_sysconfdir}/xdg/menus/preferences-post-merged
@@ -85,6 +86,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Wed Aug 13 2008 Matthias Clasen <mclasen@redhat.com> - 8.9.11-5
+- Own /etc/xdg/menus
+
 * Tue Jul  8 2008 Matthias Clasen <mclasen@redhat.com> - 8.9.11-4
 - Fix icons for menus
 
