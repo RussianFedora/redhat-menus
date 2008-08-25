@@ -1,0 +1,226 @@
+diff -up redhat-menus-8.9.11/desktop-files/Accessories-More.directory.in.icon-names redhat-menus-8.9.11/desktop-files/Accessories-More.directory.in
+--- redhat-menus-8.9.11/desktop-files/Accessories-More.directory.in.icon-names	2008-08-24 22:06:04.000000000 -0400
++++ redhat-menus-8.9.11/desktop-files/Accessories-More.directory.in	2008-08-24 22:06:14.000000000 -0400
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ _Name=More Accessories
+ _Comment=Desktop accessories
+-Icon=gnome-util
++Icon=applications-accessories
+ Type=Directory
+ Encoding=UTF-8
+diff -up redhat-menus-8.9.11/desktop-files/Advanced-More.directory.in.icon-names redhat-menus-8.9.11/desktop-files/Advanced-More.directory.in
+diff -up redhat-menus-8.9.11/desktop-files/AllPrograms.directory.in.icon-names redhat-menus-8.9.11/desktop-files/AllPrograms.directory.in
+--- redhat-menus-8.9.11/desktop-files/AllPrograms.directory.in.icon-names	2008-08-24 22:06:47.000000000 -0400
++++ redhat-menus-8.9.11/desktop-files/AllPrograms.directory.in	2008-08-24 22:07:02.000000000 -0400
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ _Name=All Applications
+ _Comment=All Applications
+-Icon=gnome-applications.png
++Icon=applications-office
+ Type=Directory
+-Encoding=UTF-8
+\ No newline at end of file
++Encoding=UTF-8
+diff -up redhat-menus-8.9.11/desktop-files/Desktop.directory.in.icon-names redhat-menus-8.9.11/desktop-files/Desktop.directory.in
+--- redhat-menus-8.9.11/desktop-files/Desktop.directory.in.icon-names	2008-08-24 22:07:16.000000000 -0400
++++ redhat-menus-8.9.11/desktop-files/Desktop.directory.in	2008-08-24 22:07:32.000000000 -0400
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ _Name=System
+ _Comment=Personal preferences and administration settings
+-Icon=gnome-settings
++Icon=preferences-desktop
+ Type=Directory
+ Encoding=UTF-8
+diff -up redhat-menus-8.9.11/desktop-files/Development-More.directory.in.icon-names redhat-menus-8.9.11/desktop-files/Development-More.directory.in
+--- redhat-menus-8.9.11/desktop-files/Development-More.directory.in.icon-names	2008-08-24 22:07:50.000000000 -0400
++++ redhat-menus-8.9.11/desktop-files/Development-More.directory.in	2008-08-24 22:08:12.000000000 -0400
+@@ -1,5 +1,5 @@
+ [Desktop Entry]
+ _Name=More Programming Tools
+ _Comment=Tools for software development
+-Icon=gnome-devel
++Icon=applications-development
+ Type=Directory
+diff -up redhat-menus-8.9.11/desktop-files/Documentation.directory.in.icon-names redhat-menus-8.9.11/desktop-files/Documentation.directory.in
+--- redhat-menus-8.9.11/desktop-files/Documentation.directory.in.icon-names	2008-08-24 22:08:27.000000000 -0400
++++ redhat-menus-8.9.11/desktop-files/Documentation.directory.in	2008-08-24 22:08:37.000000000 -0400
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ _Name=Documentation
+ _Comment=Manuals and help documents
+-Icon=gnome-help.png
++Icon=help-browser
+ Type=Directory
+-Encoding=UTF-8
+\ No newline at end of file
++Encoding=UTF-8
+diff -up redhat-menus-8.9.11/desktop-files/Documentation-More.directory.in.icon-names redhat-menus-8.9.11/desktop-files/Documentation-More.directory.in
+--- redhat-menus-8.9.11/desktop-files/Documentation-More.directory.in.icon-names	2008-08-24 22:08:49.000000000 -0400
++++ redhat-menus-8.9.11/desktop-files/Documentation-More.directory.in	2008-08-24 22:08:59.000000000 -0400
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ _Name=More Documentation
+ _Comment=Manuals and help documents
+-Icon=gnome-help.png
++Icon=help-browser
+ Type=Directory
+-Encoding=UTF-8
+\ No newline at end of file
++Encoding=UTF-8
+diff -up redhat-menus-8.9.11/desktop-files/Games-More.directory.in.icon-names redhat-menus-8.9.11/desktop-files/Games-More.directory.in
+--- redhat-menus-8.9.11/desktop-files/Games-More.directory.in.icon-names	2008-08-24 22:09:53.000000000 -0400
++++ redhat-menus-8.9.11/desktop-files/Games-More.directory.in	2008-08-24 22:10:05.000000000 -0400
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ _Name=More Games
+ _Comment=Games and amusements
+-Icon=gnome-joystick
++Icon=applications-games
+ Type=Directory
+ Encoding=UTF-8
+diff -up redhat-menus-8.9.11/desktop-files/Graphics-More.directory.in.icon-names redhat-menus-8.9.11/desktop-files/Graphics-More.directory.in
+--- redhat-menus-8.9.11/desktop-files/Graphics-More.directory.in.icon-names	2008-08-24 22:10:16.000000000 -0400
++++ redhat-menus-8.9.11/desktop-files/Graphics-More.directory.in	2008-08-24 22:10:38.000000000 -0400
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ _Name=More Graphics Applications
+ _Comment=Graphics applications
+-Icon=gnome-graphics
++Icon=applications-graphics
+ Type=Directory
+ Encoding=UTF-8
+diff -up redhat-menus-8.9.11/desktop-files/Internet-More.directory.in.icon-names redhat-menus-8.9.11/desktop-files/Internet-More.directory.in
+--- redhat-menus-8.9.11/desktop-files/Internet-More.directory.in.icon-names	2008-08-24 22:10:45.000000000 -0400
++++ redhat-menus-8.9.11/desktop-files/Internet-More.directory.in	2008-08-24 22:10:57.000000000 -0400
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ _Name=More Internet Applications
+ _Comment=Programs for Internet access such as web and email
+-Icon=gnome-globe
++Icon=applications-internet
+ Type=Directory
+ 
+diff -up redhat-menus-8.9.11/desktop-files/Multimedia-More.directory.in.icon-names redhat-menus-8.9.11/desktop-files/Multimedia-More.directory.in
+--- redhat-menus-8.9.11/desktop-files/Multimedia-More.directory.in.icon-names	2008-08-24 22:11:05.000000000 -0400
++++ redhat-menus-8.9.11/desktop-files/Multimedia-More.directory.in	2008-08-24 22:11:19.000000000 -0400
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ _Name=More Sound & Video Applications
+ _Comment=Multimedia menu
+-Icon=gnome-multimedia
++Icon=applications-multimedia
+ Type=Directory
+ Encoding=UTF-8
+diff -up redhat-menus-8.9.11/desktop-files/Office-More.directory.in.icon-names redhat-menus-8.9.11/desktop-files/Office-More.directory.in
+--- redhat-menus-8.9.11/desktop-files/Office-More.directory.in.icon-names	2008-08-24 22:11:28.000000000 -0400
++++ redhat-menus-8.9.11/desktop-files/Office-More.directory.in	2008-08-24 22:13:50.000000000 -0400
+@@ -1,5 +1,5 @@
+ [Desktop Entry]
+ _Name=More Office Applications
+ _Comment=Additional office applications
+-Icon=gnome-applications
++Icon=applications-office
+ Type=Directory
+diff -up redhat-menus-8.9.11/desktop-files/Root.directory.in.icon-names redhat-menus-8.9.11/desktop-files/Root.directory.in
+--- redhat-menus-8.9.11/desktop-files/Root.directory.in.icon-names	2008-08-24 22:14:37.000000000 -0400
++++ redhat-menus-8.9.11/desktop-files/Root.directory.in	2008-08-24 22:14:44.000000000 -0400
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ _Name=Programs
+ _Comment=Programs menu
+-Icon=gnome-folder.png
++Icon=folder
+ Type=Directory
+ Encoding=UTF-8
+diff -up redhat-menus-8.9.11/desktop-files/ServerConfig.directory.in.icon-names redhat-menus-8.9.11/desktop-files/ServerConfig.directory.in
+--- redhat-menus-8.9.11/desktop-files/ServerConfig.directory.in.icon-names	2008-08-24 22:15:31.000000000 -0400
++++ redhat-menus-8.9.11/desktop-files/ServerConfig.directory.in	2008-08-24 22:15:50.000000000 -0400
+@@ -2,5 +2,5 @@
+ Type=Directory
+ _Name=Server Settings
+ _Comment=Configure network services (web server, DNS server, etc.)
+-Icon=redhat-server_settings.png
++Icon=preferences-system-network
+ Terminal=0
+diff -up redhat-menus-8.9.11/desktop-files/ServerConfig-More.directory.in.icon-names redhat-menus-8.9.11/desktop-files/ServerConfig-More.directory.in
+--- redhat-menus-8.9.11/desktop-files/ServerConfig-More.directory.in.icon-names	2008-08-24 22:16:01.000000000 -0400
++++ redhat-menus-8.9.11/desktop-files/ServerConfig-More.directory.in	2008-08-24 22:16:15.000000000 -0400
+@@ -2,5 +2,5 @@
+ Type=Directory
+ _Name=More Server Settings
+ _Comment=Configure network services (web server, DNS server, etc.)
+-Icon=redhat-server_settings.png
++Icon=preferences-system-network
+ Terminal=0
+diff -up redhat-menus-8.9.11/desktop-files/Settings-More.directory.in.icon-names redhat-menus-8.9.11/desktop-files/Settings-More.directory.in
+--- redhat-menus-8.9.11/desktop-files/Settings-More.directory.in.icon-names	2008-08-24 22:17:19.000000000 -0400
++++ redhat-menus-8.9.11/desktop-files/Settings-More.directory.in	2008-08-24 22:17:27.000000000 -0400
+@@ -1,5 +1,5 @@
+ [Desktop Entry]
+ _Name=More Preferences
+ _Comment=Personal preferences and settings
+-Icon=gnome-settings
++Icon=preferences-desktop
+ Type=Directory
+diff -up redhat-menus-8.9.11/desktop-files/SystemConfig.directory.in.icon-names redhat-menus-8.9.11/desktop-files/SystemConfig.directory.in
+--- redhat-menus-8.9.11/desktop-files/SystemConfig.directory.in.icon-names	2008-08-24 22:18:28.000000000 -0400
++++ redhat-menus-8.9.11/desktop-files/SystemConfig.directory.in	2008-08-24 22:18:40.000000000 -0400
+@@ -2,6 +2,6 @@
+ Type=Directory
+ _Name=Administration
+ _Comment=Change systemwide settings (affects all users)
+-Icon=redhat-system_settings.png
++Icon=preferences-system
+ Terminal=0
+ Encoding=UTF-8
+diff -up redhat-menus-8.9.11/desktop-files/SystemConfig-More.directory.in.icon-names redhat-menus-8.9.11/desktop-files/SystemConfig-More.directory.in
+--- redhat-menus-8.9.11/desktop-files/SystemConfig-More.directory.in.icon-names	2008-08-24 22:18:07.000000000 -0400
++++ redhat-menus-8.9.11/desktop-files/SystemConfig-More.directory.in	2008-08-24 22:18:19.000000000 -0400
+@@ -2,6 +2,6 @@
+ Type=Directory
+ _Name=More System Settings
+ _Comment=Change systemwide settings (affects all users)
+-Icon=redhat-system_settings.png
++Icon=preferences-system
+ Terminal=0
+ Encoding=UTF-8
+diff -up redhat-menus-8.9.11/desktop-files/System-More.directory.in.icon-names redhat-menus-8.9.11/desktop-files/System-More.directory.in
+--- redhat-menus-8.9.11/desktop-files/System-More.directory.in.icon-names	2008-08-24 22:17:35.000000000 -0400
++++ redhat-menus-8.9.11/desktop-files/System-More.directory.in	2008-08-24 22:17:55.000000000 -0400
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ _Name=More System Tools
+ _Comment=System configuration and monitoring
+-Icon=gnome-system
++Icon=applications-system
+ Type=Directory
+ Encoding=UTF-8
+diff -up redhat-menus-8.9.11/desktop-files/Utilities.directory.in.icon-names redhat-menus-8.9.11/desktop-files/Utilities.directory.in
+--- redhat-menus-8.9.11/desktop-files/Utilities.directory.in.icon-names	2008-08-24 22:19:10.000000000 -0400
++++ redhat-menus-8.9.11/desktop-files/Utilities.directory.in	2008-08-24 22:19:22.000000000 -0400
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ _Name=Utilities
+ _Comment=Utilities 
+-Icon=gnome-util.png
++Icon=applications-accessories
+ Type=Directory
+-Encoding=UTF-8
+\ No newline at end of file
++Encoding=UTF-8
+diff -up redhat-menus-8.9.11/desktop-files/Utilities-More.directory.in.icon-names redhat-menus-8.9.11/desktop-files/Utilities-More.directory.in
+--- redhat-menus-8.9.11/desktop-files/Utilities-More.directory.in.icon-names	2008-08-24 22:18:51.000000000 -0400
++++ redhat-menus-8.9.11/desktop-files/Utilities-More.directory.in	2008-08-24 22:19:04.000000000 -0400
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ _Name=More Utilities
+ _Comment=Utilities 
+-Icon=gnome-util.png
++Icon=applications-accessories
+ Type=Directory
+-Encoding=UTF-8
+\ No newline at end of file
++Encoding=UTF-8

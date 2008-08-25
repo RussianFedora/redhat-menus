@@ -4,7 +4,7 @@
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
 Version: 8.9.11
-Release: 5%{?dist}
+Release: 6%{?dist}
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 License: GPL+
@@ -29,6 +29,7 @@ Patch0: redhat-menus-8.9.11-evolution.patch
 Patch1: redhat-menus-8.9.11-pirut.patch
 # directory files got renamed in gnome-menus for silly reasons
 Patch2: redhat-menus-8.9.11-directory-rename.patch
+Patch3: icon-names.patch
 
 %description
 
@@ -41,6 +42,7 @@ of "subdirectories" in the menus.
 %patch0 -p1 -b .evolution
 %patch1 -p1 -b .pirut
 %patch2 -p1 -b .directory-rename
+%patch3 -p1 -b .icon-names
 
 %build
 intltoolize --force
@@ -86,6 +88,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Sun Aug 24 2008 Matthias Clasen <mclasen@redhat.com> - 8.9.11-6
+- Use standard icon names where available 
+
 * Wed Aug 13 2008 Matthias Clasen <mclasen@redhat.com> - 8.9.11-5
 - Own /etc/xdg/menus
 
