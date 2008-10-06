@@ -1,0 +1,24 @@
+diff -up redhat-menus-8.9.11/configure.in.nb redhat-menus-8.9.11/configure.in
+--- redhat-menus-8.9.11/configure.in.nb	2008-10-06 11:17:33.000000000 -0400
++++ redhat-menus-8.9.11/configure.in	2008-10-06 11:17:49.000000000 -0400
+@@ -22,7 +22,7 @@ if test "x$GCC" = "xyes"; then
+ fi
+ changequote([,])dnl
+ 
+-ALL_LINGUAS="af am ar as be bg bn_IN bn ca cs cy da de el en_GB es et fa fi fr gl gu he hi hr hu hy id ilo is it ja ka kn ko ku lo lt lv mk ml mr ms my nb nl no nso or pa pl pt_BR pt ro ru si sk sl sq sr@Latn sr sv ta te th tr uk ur vi zh_CN zh_TW zu"
++ALL_LINGUAS="af am ar as be bg bn_IN bn ca cs cy da de el en_GB es et fa fi fr gl gu he hi hr hu hy id ilo is it ja ka kn ko ku lo lt lv mk ml mr ms my nb nl nso or pa pl pt_BR pt ro ru si sk sl sq sr@Latn sr sv ta te th tr uk ur vi zh_CN zh_TW zu"
+ 
+ AM_GLIB_GNU_GETTEXT
+ 
+diff -up redhat-menus-8.9.11/configure.nb redhat-menus-8.9.11/configure
+--- redhat-menus-8.9.11/configure.nb	2008-10-06 11:17:38.000000000 -0400
++++ redhat-menus-8.9.11/configure	2008-10-06 11:18:36.000000000 -0400
+@@ -2318,7 +2318,7 @@ if test "x$GCC" = "xyes"; then
+   esac
+ fi
+ 
+-ALL_LINGUAS="af am ar as be bg bn_IN bn ca cs cy da de el en_GB es et fa fi fr gl gu he hi hr hu hy id ilo is it ja ka kn ko ku lo lt lv mk ml mr ms my nb nl no nso or pa pl pt_BR pt ro ru si sk sl sq sr@Latn sr sv ta te th tr uk ur vi zh_CN zh_TW zu"
++ALL_LINGUAS="af am ar as be bg bn_IN bn ca cs cy da de el en_GB es et fa fi fr gl gu he hi hr hu hy id ilo is it ja ka kn ko ku lo lt lv mk ml mr ms my nb nl nso or pa pl pt_BR pt ro ru si sk sl sq sr@Latn sr sv ta te th tr uk ur vi zh_CN zh_TW zu"
+ 
+ DEPDIR="${am__leading_dot}deps"
+ 
