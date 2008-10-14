@@ -3,8 +3,8 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 8.9.11
-Release: 7%{?dist}
+Version: 10.0.0
+Release: 1%{?dist}
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 License: GPL+
@@ -90,6 +90,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Tue Oct 14 2008 Ray Strode <rstrode@redhat.com> - 10.0.0-1
+- Update to 10.0.0 to pull in latest translations
+
 * Mon Oct  6 2008 Matthias Clasen <mclasen@redhat.com> - 8.9.11-7
 - Remove obsolete no translation (#465673)
 
