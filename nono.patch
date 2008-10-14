@@ -17,8 +17,8 @@ diff -up redhat-menus-8.9.11/configure.nb redhat-menus-8.9.11/configure
    esac
  fi
  
--ALL_LINGUAS="af am ar as be bg bn_IN bn ca cs cy da de el en_GB es et fa fi fr gl gu he hi hr hu hy id ilo is it ja ka kn ko ku lo lt lv mk ml mr ms my nb nl no nso or pa pl pt_BR pt ro ru si sk sl sq sr@Latn sr sv ta te th tr uk ur vi zh_CN zh_TW zu"
-+ALL_LINGUAS="af am ar as be bg bn_IN bn ca cs cy da de el en_GB es et fa fi fr gl gu he hi hr hu hy id ilo is it ja ka kn ko ku lo lt lv mk ml mr ms my nb nl nso or pa pl pt_BR pt ro ru si sk sl sq sr@Latn sr sv ta te th tr uk ur vi zh_CN zh_TW zu"
+-ALL_LINGUAS="af am ar as be bg bn_IN bn ca cs cy da de el en_GB es et fa fi fr gl gu he hi hr hu hy id ilo is it ja ka kn ko ku lo lt lv mk ml mr ms my nb nl no nso or pa pl pt_BR pt ro ru si sk sl sq sr@latin sr sv ta te th tr uk ur vi zh_CN zh_TW zu"
++ALL_LINGUAS="af am ar as be bg bn_IN bn ca cs cy da de el en_GB es et fa fi fr gl gu he hi hr hu hy id ilo is it ja ka kn ko ku lo lt lv mk ml mr ms my nb nl nso or pa pl pt_BR pt ro ru si sk sl sq sr@latin sr sv ta te th tr uk ur vi zh_CN zh_TW zu"
  
  DEPDIR="${am__leading_dot}deps"
  
