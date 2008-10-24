@@ -1,6 +1,15 @@
-diff -up redhat-menus-8.9.11/menus/applications.menu.directory-rename redhat-menus-8.9.11/menus/applications.menu
---- redhat-menus-8.9.11/menus/applications.menu.directory-rename	2008-07-08 14:29:14.000000000 -0400
-+++ redhat-menus-8.9.11/menus/applications.menu	2008-07-08 14:38:58.000000000 -0400
+diff -up redhat-menus-10.0.0/menus/applications.menu.directory-rename redhat-menus-10.0.0/menus/applications.menu
+--- redhat-menus-10.0.0/menus/applications.menu.directory-rename	2008-10-24 18:34:50.000000000 -0400
++++ redhat-menus-10.0.0/menus/applications.menu	2008-10-24 18:37:49.000000000 -0400
+@@ -4,7 +4,7 @@
+ <Menu>
+ 
+   <Name>Applications</Name>
+-  <Directory>Applications.directory</Directory>
++  <Directory>X-GNOME-Menu-Applications.directory</Directory>
+ 
+   <!-- Scan legacy dirs first, as later items take priority -->
+   <LegacyDir>/usr/share/gnome/apps</LegacyDir>
 @@ -21,7 +21,7 @@
    <!-- Accessories submenu -->
    <Menu>
@@ -46,9 +55,9 @@ diff -up redhat-menus-8.9.11/menus/applications.menu.directory-rename redhat-men
      <OnlyUnallocated/>
      <Include>
        <And>
-diff -up redhat-menus-8.9.11/menus/preferences.menu.directory-rename redhat-menus-8.9.11/menus/preferences.menu
---- redhat-menus-8.9.11/menus/preferences.menu.directory-rename	2008-07-08 14:40:45.000000000 -0400
-+++ redhat-menus-8.9.11/menus/preferences.menu	2008-07-08 14:40:55.000000000 -0400
+diff -up redhat-menus-10.0.0/menus/preferences.menu.directory-rename redhat-menus-10.0.0/menus/preferences.menu
+--- redhat-menus-10.0.0/menus/preferences.menu.directory-rename	2007-10-01 18:00:02.000000000 -0400
++++ redhat-menus-10.0.0/menus/preferences.menu	2008-10-24 18:34:50.000000000 -0400
 @@ -3,7 +3,7 @@
  
  <Menu>
@@ -58,4 +67,3 @@ diff -up redhat-menus-8.9.11/menus/preferences.menu.directory-rename redhat-menu
  
    <!-- Read standard .directory and .desktop file locations -->
    <DefaultAppDirs/>
-diff -up redhat-menus-8.9.11/menus/settings.menu.directory-rename redhat-menus-8.9.11/menus/settings.menu
