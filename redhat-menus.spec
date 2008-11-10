@@ -3,8 +3,8 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 10.0.0
-Release: 2%{?dist}
+Version: 10.0.1
+Release: 1%{?dist}
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 License: GPL+
@@ -90,6 +90,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Mon Nov 10 2008 Ray Strode <rstrode@redhat.com> - 10.0.1-1
+- Update translations (bug 470652)
+
 * Fri Oct 24 2008 Matthias Clasen <mclasen@redhat.com> - 10.0.0-2
 - One more directory rename. Thank you, gnome-menus
 
