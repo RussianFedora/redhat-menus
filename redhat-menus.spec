@@ -4,7 +4,7 @@
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
 Version: 10.0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 License: GPL+
@@ -31,6 +31,7 @@ Patch1: redhat-menus-8.9.11-pirut.patch
 Patch2: redhat-menus-8.9.11-directory-rename.patch
 Patch3: icon-names.patch
 Patch4: nono.patch
+Patch5: redhat-menus-no-submenus.patch
 
 %description
 
@@ -45,6 +46,7 @@ of "subdirectories" in the menus.
 %patch2 -p1 -b .directory-rename
 %patch3 -p1 -b .icon-names
 %patch4 -p1 -b .nono
+%patch5 -p1 -b .no-submenus
 
 %build
 intltoolize --force
@@ -90,6 +92,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Fri Feb  6 2009 Matthias Clasen <mclasen@redhat.com> - 10.0.1-2
+- Remove the submenus from Preferences
+
 * Mon Nov 10 2008 Ray Strode <rstrode@redhat.com> - 10.0.1-1
 - Update translations (bug 470652)
 
