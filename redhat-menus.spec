@@ -3,13 +3,13 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 10.0.1
-Release: 4%{?dist}
+Version: 12.0.1
+Release: 1%{?dist}
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 License: GPL+
 Group: User Interface/Desktops
-BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n) 
+BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch: noarch
 BuildRequires: desktop-file-utils >= %{desktop_file_utils_version}
 BuildRequires: intltool automake autoconf libtool
@@ -24,34 +24,15 @@ Conflicts: redhat-artwork < 0.35
 ## old evolution packages point to a no-longer-existing symlink
 Conflicts: evolution <= 2.4.1-5
 
-Patch0: redhat-menus-8.9.11-evolution.patch
-Patch1: redhat-menus-8.9.11-pirut.patch
-# directory files got renamed in gnome-menus for silly reasons
-Patch2: redhat-menus-8.9.11-directory-rename.patch
-Patch3: icon-names.patch
-Patch4: nono.patch
-Patch5: redhat-menus-no-submenus.patch
-Patch6: redhat-menus-preferences-categories.patch
-
 %description
-
-This package contains the XML files that describe the menu layout for 
-GNOME and KDE, and the .desktop files that define the names and icons 
+This package contains the XML files that describe the menu layout for
+GNOME and KDE, and the .desktop files that define the names and icons
 of "subdirectories" in the menus.
 
 %prep
 %setup -q
-%patch0 -p1 -b .evolution
-%patch1 -p1 -b .pirut
-%patch2 -p1 -b .directory-rename
-%patch3 -p1 -b .icon-names
-%patch4 -p1 -b .nono
-%patch5 -p1 -b .no-submenus
-%patch6 -p1 -b .preferences-categories
 
 %build
-intltoolize --force
-autoconf
 %configure
 make
 
@@ -61,9 +42,6 @@ rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
 
 %find_lang %{gettext_package}
-
-# this is in gnome-menus now
-rm -f $RPM_BUILD_ROOT%{_datadir}/desktop-directories/System.directory
 
 # create the settings-merged to prevent gamin from looking for it
 # in a loop
@@ -91,6 +69,7 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Thu Sep 24 2009 Matthias Clasen <mclasen@redhat.com> - 12.0.1-1
 * Sun Jul 26 2009 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 10.0.1-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_12_Mass_Rebuild
 
