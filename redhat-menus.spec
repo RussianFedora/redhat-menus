@@ -3,13 +3,12 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 12.0.1
-Release: 2%{?dist}
+Version: 12.0.2
+Release: 1%{?dist}
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
 License: GPL+
 Group: User Interface/Desktops
-BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch: noarch
 BuildRequires: desktop-file-utils >= %{desktop_file_utils_version}
 BuildRequires: intltool automake autoconf libtool
@@ -69,6 +68,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Wed Apr  7 2010 Matthias Clasen <mclasen@redhat.com> - 12.0.2-1
+- Don't let release notes show up in Applications>Other
+
 * Mon Nov 30 2009 Matthias Clasen <mclasen@redhat.com> - 12.0.1-2
 - Drop desktop-menu-patches
 
