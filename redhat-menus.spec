@@ -1,27 +1,17 @@
 %define gettext_package redhat-menus
-%define desktop_file_utils_version 0.9
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
 Version: 12.0.2
-Release: 1%{?dist}
+Release: 2%{?dist}
 URL: http://www.redhat.com
+#FIXME-> There is no hosting website for this project.
 Source0: %{name}-%{version}.tar.gz
 License: GPL+
 Group: User Interface/Desktops
 BuildArch: noarch
-BuildRequires: desktop-file-utils >= %{desktop_file_utils_version}
-BuildRequires: intltool automake autoconf libtool
-BuildRequires: glib2-devel
-Requires(post): desktop-file-utils >= %{desktop_file_utils_version}
-Requires(postun): desktop-file-utils >= %{desktop_file_utils_version}
-
-## old nautilus contained start-here stuff
-Conflicts: nautilus <= 2.0.3-1
-## desktop files in redhat-menus point to icons in new artwork
-Conflicts: redhat-artwork < 0.35
-## old evolution packages point to a no-longer-existing symlink
-Conflicts: evolution <= 2.4.1-5
+BuildRequires: desktop-file-utils
+BuildRequires: intltool
 
 %description
 This package contains the XML files that describe the menu layout for
@@ -33,12 +23,10 @@ of "subdirectories" in the menus.
 
 %build
 %configure
-make
+make %{?_smp_mflags}
 
 %install
-rm -rf $RPM_BUILD_ROOT
-
-make install DESTDIR=$RPM_BUILD_ROOT
+make install DESTDIR=$RPM_BUILD_ROOT INSTALL="install -p"
 
 %find_lang %{gettext_package}
 
@@ -46,17 +34,14 @@ make install DESTDIR=$RPM_BUILD_ROOT
 # in a loop
 mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/xdg/menus/settings-merged ||:
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
 %post
-update-desktop-database %{_datadir}/applications
+update-desktop-database &> /dev/null || :
 
 %postun
-update-desktop-database %{_datadir}/applications
+update-desktop-database &> /dev/null || :
 
 %files  -f %{gettext_package}.lang
-%defattr(-,root,root)
+%defattr(-,root,root,-)
 %doc COPYING
 %dir %{_sysconfdir}/xdg/menus
 %dir %{_sysconfdir}/xdg/menus/applications-merged
@@ -68,6 +53,9 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Thu Sep 16 2010 Parag Nemade <paragn AT fedoraproject.org> 12.0.2-2
+- Merge-review cleanup (#226364)
+
 * Wed Apr  7 2010 Matthias Clasen <mclasen@redhat.com> - 12.0.2-1
 - Don't let release notes show up in Applications>Other
 
@@ -296,7 +284,7 @@ update-desktop-database %{_datadir}/applications
 
 * Mon Nov 22 2004 Dan Williams <dcbw@redhat.com> 3.7-5
 - #rh137520# Add "application/x-ole-storage" to Calc, Impress, and Writer
-	desktop files, so Evolution can associate these with OOo
+ desktop files, so Evolution can associate these with OOo
 
 * Tue Nov 16 2004 Dan Williams <dcbw@redhat.com> 3.7-4
 - #rh137520# Add more supported mime-types to OpenOffice.org .desktop files
