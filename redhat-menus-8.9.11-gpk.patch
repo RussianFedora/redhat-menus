@@ -1,0 +1,57 @@
+diff -urN redhat-menus-8.9.11.orig/menus/applications.menu redhat-menus-8.9.11/menus/applications.menu
+--- redhat-menus-8.9.11.orig/menus/applications.menu	2008-07-21 13:20:17.000000000 +0400
++++ redhat-menus-8.9.11/menus/applications.menu	2008-07-21 13:19:34.000000000 +0400
+@@ -140,6 +140,18 @@
+     </Include>
+   </Menu> <!-- End Other -->
+ 
++  <Include>
++    <Filename>gpk-application.desktop</Filename>
++  </Include>
++
++  <!-- Separator between menus and gnome-app-install -->
++  <Layout>
++    <Merge type="menus"/>
++    <Merge type="files"/>
++    <Separator/>
++    <Filename>gpk-application.desktop</Filename>
++  </Layout>
++
+   <MergeFile>applications-kmenuedit.menu</MergeFile>
+ 
+   <!-- Read in overrides and child menus from applications.d -->
+diff -urN redhat-menus-8.9.11.orig/menus/settings.menu redhat-menus-8.9.11/menus/settings.menu
+--- redhat-menus-8.9.11.orig/menus/settings.menu	2008-07-21 13:20:17.000000000 +0400
++++ redhat-menus-8.9.11/menus/settings.menu	2008-07-21 13:19:34.000000000 +0400
+@@ -38,6 +38,18 @@
+     <MergeFile>system-settings.menu</MergeFile>
+   </Menu>     <!-- End System Settings -->
+ 
++  <Include>
++     <Filename>gpk-update-viewer.desktop</Filename>
++  </Include>
++
++  <!-- Separator between menus and gnome-app-install -->
++  <Layout>
++      <Merge type="menus"/>
++      <Merge type="files"/>
++      <Separator/>
++       <Filename>gpk-update-viewer.desktop</Filename>
++  </Layout>
++
+   <!-- Documentation -->
+   <Menu>
+     <Name>Documentation</Name>
+diff -urN redhat-menus-8.9.11.orig/menus/system-settings.menu redhat-menus-8.9.11/menus/system-settings.menu
+--- redhat-menus-8.9.11.orig/menus/system-settings.menu	2008-07-21 13:20:17.000000000 +0400
++++ redhat-menus-8.9.11/menus/system-settings.menu	2008-07-21 16:03:29.000000000 +0400
+@@ -39,4 +39,9 @@
+     </And>
+   </Include>
+ 
++  <Exclude>
++    <Filename>gpk-update-viewer.desktop</Filename>
++    <Filename>gpk-application.desktop</Filename>
++  </Exclude>
++
+ </Menu>     <!-- End System Settings -->

@@ -4,9 +4,10 @@
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
 Version: 12.0.2
-Release: 1%{?dist}
+Release: 1%{?dist}.1
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
+Patch0: redhat-menus-8.9.11-gpk.patch
 License: GPL+
 Group: User Interface/Desktops
 BuildArch: noarch
@@ -30,6 +31,7 @@ of "subdirectories" in the menus.
 
 %prep
 %setup -q
+%patch0 -p1 -b.gpk
 
 %build
 %configure
@@ -68,6 +70,10 @@ update-desktop-database %{_datadir}/applications
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Fri Apr  9 2010 Arkady L. Shane <ashejn@yandex-team.ru> - 12.0.2-1.1
+- added gnome-packagekit in Applications menu
+- added System Update in System menu.
+
 * Wed Apr  7 2010 Matthias Clasen <mclasen@redhat.com> - 12.0.2-1
 - Don't let release notes show up in Applications>Other
 
