@@ -1,0 +1,11 @@
+diff -up redhat-menus-14.0.0/menus/applications.menu.documentation redhat-menus-14.0.0/menus/applications.menu
+--- redhat-menus-14.0.0/menus/applications.menu.documentation	2010-02-05 13:30:58.573890658 -0500
++++ redhat-menus-14.0.0/menus/applications.menu	2010-02-05 13:31:10.819884899 -0500
+@@ -136,6 +136,7 @@
+         <Not><Category>SystemSetup</Category></Not>
+         <Not><Category>X-Red-Hat-ServerConfig</Category></Not>
+         <Not><Category>Screensaver</Category></Not>
++        <Not><Category>Documentation</Category></Not>
+       </And>
+     </Include>
+   </Menu> <!-- End Other -->

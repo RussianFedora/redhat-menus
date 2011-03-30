@@ -1,0 +1,176 @@
+diff -urN a/po/kn.po b/po/kn.po
+--- a/po/kn.po	2010-05-06 14:17:42.843029568 +0530
++++ b/po/kn.po	2010-05-06 14:17:52.531162773 +0530
+@@ -8,7 +8,7 @@
+ msgstr ""
+ "Project-Id-Version: kn\n"
+ "Report-Msgid-Bugs-To: \n"
+-"POT-Creation-Date: 2010-01-29 13:33-0500\n"
++"POT-Creation-Date: 2010-03-29 14:43+0530\n"
+ "PO-Revision-Date: 2007-04-17 19:10+0530\n"
+ "Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
+ "Language-Team: Kannada <en@li.org>\n"
+@@ -33,11 +33,11 @@
+ #: ../desktop-files/Advanced.directory.in.h:2
+ #: ../desktop-files/Advanced-More.directory.in.h:1
+ msgid "Advanced settings and preferences"
+-msgstr "ಪ್ರೌಢ ಸಂಯೋಜನೆಗಳು ಮತ್ತು ಆದ್ಯತೆಗಳು"
++msgstr "ಪ್ರೌಢ ಸಿದ್ಧತೆಗಳು ಮತ್ತು ಆದ್ಯತೆಗಳು"
+ 
+ #: ../desktop-files/Advanced-More.directory.in.h:2
+ msgid "More Advanced Settings"
+-msgstr "ಹೆಚ್ಚುವರಿ ಪ್ರೌಢ ಸಂಯೋಜನೆಗಳು"
++msgstr "ಹೆಚ್ಚುವರಿ ಪ್ರೌಢ ಸಿದ್ಧತೆಗಳು"
+ 
+ #: ../desktop-files/AllPrograms.directory.in.h:1
+ msgid "All Applications"
+@@ -45,7 +45,7 @@
+ 
+ #: ../desktop-files/Desktop.directory.in.h:1
+ msgid "Personal preferences and administration settings"
+-msgstr "ವೈಯಕ್ತಿಕ ಆದ್ಯತೆಗಳು ಮತ್ತು ನಿರ್ವಹಣಾ ಸಂಯೋಜನೆಗಳು"
++msgstr "ವೈಯಕ್ತಿಕ ಆದ್ಯತೆಗಳು ಮತ್ತು ನಿರ್ವಹಣಾ ಸಿದ್ಧತೆಗಳು"
+ 
+ #: ../desktop-files/Desktop.directory.in.h:2
+ msgid "System"
+@@ -53,7 +53,7 @@
+ 
+ #: ../desktop-files/Development-More.directory.in.h:1
+ msgid "More Programming Tools"
+-msgstr "ಹೆಚ್ಚುವರಿ ವಿಧಿಸಂಚಯನಕ್ರಮ (programming) ಉಪಕರಣಗಳು"
++msgstr "ಹೆಚ್ಚುವರಿ ಪ್ರೊಗ್ರಾಮಿಂಗ್ ಉಪಕರಣಗಳು"
+ 
+ #: ../desktop-files/Development-More.directory.in.h:2
+ msgid "Tools for software development"
+@@ -90,15 +90,15 @@
+ 
+ #: ../desktop-files/gnome-accessibility.desktop.in.h:2
+ msgid "Accessibility settings"
+-msgstr "ಸುಲಭಲಭ್ಯತೆ ಸಂಯೋಜನೆಗಳು"
++msgstr "ಸುಲಭಲಭ್ಯತೆ ಸಿದ್ಧತೆಗಳು"
+ 
+ #: ../desktop-files/gnome-gdmsetup.desktop.in.h:1
+ msgid "Configure the login screen"
+-msgstr "ಪ್ರವೇಶಕದವನ್ನು (login screen) ಸಂರಚಿಸಿ"
++msgstr "ಪ್ರವೇಶ ತೆರೆಯನ್ನು (ಲಾಗಿನ್ ಸ್ಕ್ರೀನ್) ಸಂರಚಿಸಿ"
+ 
+ #: ../desktop-files/gnome-gdmsetup.desktop.in.h:2
+ msgid "Login Screen"
+-msgstr "ಪ್ರವೇಶಕದ (login screen)"
++msgstr "ಪ್ರವೇಶತೆರೆ(ಲಾಗಿನ್ ಸ್ಕ್ರೀನ್)"
+ 
+ #: ../desktop-files/gnome-pilot.desktop.in.h:1
+ msgid "Handheld PDA"
+@@ -110,11 +110,11 @@
+ 
+ #: ../desktop-files/Graphics-More.directory.in.h:1
+ msgid "Graphics applications"
+-msgstr "ಚಿತ್ರಸಂಬಂಧೀ (Graphics) ಅನ್ವಯಗಳು"
++msgstr "ಗ್ರಾಫಿಕ್ಸ್ ಅನ್ವಯಗಳು"
+ 
+ #: ../desktop-files/Graphics-More.directory.in.h:2
+ msgid "More Graphics Applications"
+-msgstr "ಹೆಚ್ಚುವರಿ ಚಿತ್ರಸಂಬಂಧೀ ಅನ್ವಯಗಳು"
++msgstr "ಹೆಚ್ಚುವರಿ ಗ್ರಾಫಿಕ್ಸ್ ಅನ್ವಯಗಳು"
+ 
+ #: ../desktop-files/gthumb.desktop.in.h:1
+ msgid "Organize your digital photos"
+@@ -126,35 +126,35 @@
+ 
+ #: ../desktop-files/Internet-More.directory.in.h:1
+ msgid "More Internet Applications"
+-msgstr "ಹೆಚ್ಚುವರಿ ಜಾಲಸಂಬಂಧೀ ಅನ್ವಯಗಳು"
++msgstr "ಹೆಚ್ಚುವರಿ ಅಂತರಜಾಲ ಅನ್ವಯಗಳು"
+ 
+ #: ../desktop-files/Internet-More.directory.in.h:2
+ msgid "Programs for Internet access such as web and email"
+-msgstr "ಅಂತರ್ಜಾಲ ಮತ್ತು ವಿ-ಅಂಚೆ ಯಂತಹ ಜಾಲ ಸಂಪರ್ಕ ಸಂಬಂಧೀ ಕ್ರಮವಿಧಿಗಳು"
++msgstr "ಅಂತರಜಾಲ ಮತ್ತು ವಿ-ಅಂಚೆ ಯಂತಹ ಜಾಲ ಸಂಪರ್ಕ ಸಂಬಂಧೀ ಕ್ರಮವಿಧಿಗಳು"
+ 
+ #: ../desktop-files/Multimedia-More.directory.in.h:1
+ msgid "More Sound & Video Applications"
+-msgstr "ಹೆಚ್ಚುವರಿ ಧ್ವನಿ ಮತ್ತು ಚಲಚ್ಚಿತ್ರ ಸಂಬಂಧೀ ಅನ್ವಯಗಳು"
++msgstr "ಹೆಚ್ಚುವರಿ ಧ್ವನಿ ಮತ್ತು ವೀಡಿಯೊ ಅನ್ವಯಗಳು"
+ 
+ #: ../desktop-files/Multimedia-More.directory.in.h:2
+ msgid "Multimedia menu"
+-msgstr "ಬಹುಮಾಧ್ಯಮ ಪರಿವಿಡಿ"
++msgstr "ಬಹುಮಾಧ್ಯಮ ಮೆನು"
+ 
+ #: ../desktop-files/Office-More.directory.in.h:1
+ msgid "Additional office applications"
+-msgstr "ಪೂರಕ ಕಾರ್ಯಾಲಯಾನ್ವಯಗಳು"
++msgstr "ಹೆಚ್ಚುವರಿ ಆಫೀಸ್ ಅನ್ವಯಗಳು"
+ 
+ #: ../desktop-files/Office-More.directory.in.h:2
+ msgid "More Office Applications"
+-msgstr "ಹೆಚ್ಚುವರಿ ಕಾರ್ಯಾಲಯಾನ್ವಯಗಳು"
++msgstr "ಇನ್ನಷ್ಟು ಆಫೀಸ್ ಅನ್ವಯಗಳು"
+ 
+ #: ../desktop-files/openoffice-printeradmin.desktop.in.h:1
+ msgid "OpenOffice.org Printer Setup"
+-msgstr "OpenOffice.org ಮುದ್ರಕ ಸಂಯೋಜನೆ"
++msgstr "OpenOffice.org ಮುದ್ರಕ ಸಿದ್ಧತೆ"
+ 
+ #: ../desktop-files/openoffice-printeradmin.desktop.in.h:2
+ msgid "Set up printers for OpenOffice.org applications"
+-msgstr "OpenOffice.org ಅನ್ವಯಗಳಿಗೆ ಮುದ್ರಕಗಳನ್ನು ಸಂಯೋಜಿಸಿ"
++msgstr "OpenOffice.org ಅನ್ವಯಗಳಿಗೆ ಮುದ್ರಕಗಳನ್ನು ಸಿದ್ಧಗೊಳಿಸಿ"
+ 
+ #: ../desktop-files/openoffice-setup.desktop.in.h:1
+ msgid "OpenOffice.org Repair"
+@@ -166,7 +166,7 @@
+ 
+ #: ../desktop-files/redhat-audio-player.desktop.in.h:1
+ msgid "Audio Player"
+-msgstr "ಧ್ವನಿ ನಿರೂಪಕ"
++msgstr "ಆಡಿಯೊ ಚಾಲಕ"
+ 
+ #: ../desktop-files/redhat-audio-player.desktop.in.h:2
+ msgid "Play Ogg Vorbis and other audio files"
+@@ -296,11 +296,11 @@
+ 
+ #: ../desktop-files/ServerConfig.directory.in.h:2
+ msgid "Server Settings"
+-msgstr "ಪರಿಚಾರಕ (Server) ಸಂಯೋಜನೆಗಳು"
++msgstr "ಪರಿಚಾರಕ (Server) ಸಿದ್ಧತೆಗಳು"
+ 
+ #: ../desktop-files/ServerConfig-More.directory.in.h:2
+ msgid "More Server Settings"
+-msgstr "ಹೆಚ್ಚುವರಿ ಪರಿಚಾರಕ ಸಂಯೋಜನೆಗಳು"
++msgstr "ಹೆಚ್ಚುವರಿ ಪರಿಚಾರಕ ಸಿದ್ಧತೆಗಳು"
+ 
+ #: ../desktop-files/Settings-More.directory.in.h:1
+ msgid "More Preferences"
+@@ -308,7 +308,7 @@
+ 
+ #: ../desktop-files/Settings-More.directory.in.h:2
+ msgid "Personal preferences and settings"
+-msgstr "ವೈಯುಕ್ತಿ ಆದ್ಯತೆಗಳು ಮತ್ತು ಸಂಯೋಜನೆಗಳು"
++msgstr "ವೈಯುಕ್ತಿ ಆದ್ಯತೆಗಳು ಮತ್ತು ಸಿದ್ಧತೆಗಳು"
+ 
+ #: ../desktop-files/SystemConfig.directory.in.h:1
+ msgid "Administration"
+@@ -317,11 +317,11 @@
+ #: ../desktop-files/SystemConfig.directory.in.h:2
+ #: ../desktop-files/SystemConfig-More.directory.in.h:1
+ msgid "Change systemwide settings (affects all users)"
+-msgstr "ಗಣಕದಾದ್ಯಂತ ಸಂಯೋಜನೆಗಳನ್ನು ಬದಲಾಯಿಸು (ಎಲ್ಲಾ ಬಳಕೆದಾರರ ಮೇಲೂ ಪರಿಣಾಮ ಬೀರುತ್ತದೆ)"
++msgstr "ಗಣಕದಾದ್ಯಂತ ಸಿದ್ಧತೆಗಳನ್ನು ಬದಲಾಯಿಸು (ಎಲ್ಲಾ ಬಳಕೆದಾರರ ಮೇಲೂ ಪರಿಣಾಮ ಬೀರುತ್ತದೆ)"
+ 
+ #: ../desktop-files/SystemConfig-More.directory.in.h:2
+ msgid "More System Settings"
+-msgstr "ಹೆಚ್ಚುವರಿ ಗಣಕ ಸಂಯೋಜನೆಗಳು"
++msgstr "ಹೆಚ್ಚುವರಿ ಗಣಕ ಸಿದ್ಧತೆಗಳು"
+ 
+ #: ../desktop-files/System-More.directory.in.h:1
+ msgid "More System Tools"
+@@ -357,7 +357,7 @@
+ #~ msgstr "ಅತಿ ವಿರಳವಾಗಿ ಬಳಸಲ್ಪಡುವ ಅನ್ವಯಗಳು"
+ 
+ #~ msgid "Accessibility related preferences"
+-#~ msgstr "ಲಭ್ಯತೆಗೆ ಸಂಬಂಧಿತ ಸಂಯೋಜನೆಗಳು"
++#~ msgstr "ಲಭ್ಯತೆಗೆ ಸಂಬಂಧಿತ ಸಿದ್ಧತೆಗಳು"
+ 
+ #~ msgid "System Tools"
+ #~ msgstr "ಗಣಕವ್ಯವಸ್ಥೆಯ ಉಪಕರಣಗಳು"

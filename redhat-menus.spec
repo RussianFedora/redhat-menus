@@ -3,13 +3,13 @@
 
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
-Version: 12.0.2
-Release: 1%{?dist}.1
+Version: 14.0.0
+Release: 3.el6.1.R
 URL: http://www.redhat.com
 Source0: %{name}-%{version}.tar.gz
-Patch0: redhat-menus-8.9.11-gpk.patch
-License: GPL+
+License: GPLv2+
 Group: User Interface/Desktops
+BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch: noarch
 BuildRequires: desktop-file-utils >= %{desktop_file_utils_version}
 BuildRequires: intltool automake autoconf libtool
@@ -24,16 +24,32 @@ Conflicts: redhat-artwork < 0.35
 ## old evolution packages point to a no-longer-existing symlink
 Conflicts: evolution <= 2.4.1-5
 
+# Don't let documentation show up in the application menu
+Patch0: other-documentation.patch
+
+# update translations
+# https://bugzilla.redhat.com/show_bug.cgi?id=589235
+Patch1: redhat-menus-translations.patch
+
+# added gnome-packagekit to menus
+Patch2: redhat-menus-8.9.11-gpk.patch
+
 %description
-This package contains the XML files that describe the menu layout for
-GNOME and KDE, and the .desktop files that define the names and icons
+
+This package contains the XML files that describe the menu layout for 
+GNOME and KDE, and the .desktop files that define the names and icons 
 of "subdirectories" in the menus.
 
 %prep
 %setup -q
-%patch0 -p1 -b.gpk
+%patch0 -p1 -b .documentation
+%patch1 -p1 -b .translations
+%patch2 -p1 -b .gpk
+
 
 %build
+intltoolize --force
+autoconf
 %configure
 make
 
@@ -43,6 +59,9 @@ rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
 
 %find_lang %{gettext_package}
+
+# this is in gnome-menus now
+rm -f $RPM_BUILD_ROOT%{_datadir}/desktop-directories/System.directory
 
 # create the settings-merged to prevent gamin from looking for it
 # in a loop
@@ -66,23 +85,27 @@ update-desktop-database %{_datadir}/applications
 %dir %{_sysconfdir}/xdg/menus/preferences-post-merged
 %dir %{_sysconfdir}/xdg/menus/settings-merged
 %config %{_sysconfdir}/xdg/menus/*.menu
-%exclude %{_datadir}/desktop-menu-patches/*.desktop
+%{_datadir}/desktop-menu-patches/*.desktop
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
-* Fri Apr  9 2010 Arkady L. Shane <ashejn@yandex-team.ru> - 12.0.2-1.1
-- added gnome-packagekit in Applications menu
-- added System Update in System menu.
+* Wed Mar 30 2011 Arkady L. Shane <ashejn@yandex-team.ru> 14.0.0-3.el6.1.R
+- added gnome-packagekit to menus
 
-* Wed Apr  7 2010 Matthias Clasen <mclasen@redhat.com> - 12.0.2-1
-- Don't let release notes show up in Applications>Other
+* Fri May  7 2010 Matthias Clasen <mclasen@redhat.com> 14.0.0-3
+- Updated translations
+Reslves: #589235
 
-* Mon Nov 30 2009 Matthias Clasen <mclasen@redhat.com> - 12.0.1-2
-- Drop desktop-menu-patches
+* Fri Feb  5 2010 Matthias Clasen <mclasen@redhat.com> 14.0.0-2
+- Don't let documentation show up in the Application menu
 
-* Thu Sep 24 2009 Matthias Clasen <mclasen@redhat.com> - 12.0.1-1
-* Sun Jul 26 2009 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 10.0.1-4
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_12_Mass_Rebuild
+* Fri Jan 29 2010 Ray Strode <rstrode@redhat.com> 14.0.0-1
+Resolves: 559721
+- Drop accumulated patches
+- Fix COPYING file
+
+* Mon Nov 30 2009 Dennis Gregorovic <dgregor@redhat.com> - 10.0.1-3.1
+- Rebuilt for RHEL 6
 
 * Wed Feb 25 2009 Matthias Clasen <mclasen@redhat.com> - 10.0.1-3
 - Make adding submenus to Preferences work
