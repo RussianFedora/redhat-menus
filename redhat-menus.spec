@@ -3,10 +3,11 @@
 Summary: Configuration and data files for the desktop menus
 Name: redhat-menus
 Version: 12.0.2
-Release: 2%{?dist}
+Release: 3%{?dist}.1.R
 URL: http://www.redhat.com
 #FIXME-> There is no hosting website for this project.
 Source0: %{name}-%{version}.tar.gz
+Patch0: redhat-menus-8.9.11-gpk.patch
 License: GPL+
 Group: User Interface/Desktops
 BuildArch: noarch
@@ -20,6 +21,7 @@ of "subdirectories" in the menus.
 
 %prep
 %setup -q
+%patch0 -p1 -b .gpk
 
 %build
 %configure
@@ -53,6 +55,13 @@ update-desktop-database &> /dev/null || :
 %{_datadir}/desktop-directories/*.directory
 
 %changelog
+* Mon Apr  4 2011 Arkady L. Shane <ashejn@russianfedora.ru> - 12.0.2-3.1.R
+- place "Add/Remove Software" to Applications menu
+- place "Software Update" to System menus
+
+* Wed Feb 09 2011 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 12.0.2-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_15_Mass_Rebuild
+
 * Thu Sep 16 2010 Parag Nemade <paragn AT fedoraproject.org> 12.0.2-2
 - Merge-review cleanup (#226364)
 
